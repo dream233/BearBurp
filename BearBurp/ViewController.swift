@@ -121,9 +121,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailedCV = detailedViewController()
-        detailedCV.image = imageCache[indexPath.row]
-        detailedCV.movie = movies[indexPath.row]
+        let detailedCV = self.storyboard?.instantiateViewController(withIdentifier: "detail") as! DetailViewController
+        detailedCV.name = "TestName"
         navigationController?.pushViewController(detailedCV, animated: true)
     }
     

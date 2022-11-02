@@ -29,6 +29,11 @@
 		1B72A4E8290EE62400E2F244 /* detailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4E7290EE62400E2F244 /* detailedViewController.swift */; };
 		1B72A4EA290EE8AD00E2F244 /* dataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4E9290EE8AD00E2F244 /* dataStructure.swift */; };
 		1B72A4EC290F129600E2F244 /* favoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4EB290F129600E2F244 /* favoriteViewController.swift */; };
+		94767E0D2912E6F000023638 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E0C2912E6F000023638 /* MapViewController.swift */; };
+		94767E0F2912E7B200023638 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E0E2912E7B200023638 /* DetailViewController.swift */; };
+		94767E172912EF0E00023638 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E162912EF0E00023638 /* Review.swift */; };
+		94767E192912F2E000023638 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E182912F2E000023638 /* ReviewViewController.swift */; };
+		94767E1B2912F51F00023638 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E1A2912F51F00023638 /* AddReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +87,11 @@
 		1B72A4E7290EE62400E2F244 /* detailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailedViewController.swift; sourceTree = "<group>"; };
 		1B72A4E9290EE8AD00E2F244 /* dataStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataStructure.swift; sourceTree = "<group>"; };
 		1B72A4EB290F129600E2F244 /* favoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteViewController.swift; sourceTree = "<group>"; };
+		94767E0C2912E6F000023638 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		94767E0E2912E7B200023638 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		94767E162912EF0E00023638 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		94767E182912F2E000023638 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		94767E1A2912F51F00023638 /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +169,10 @@
 				1B72A4B5290CE2BB00E2F244 /* AppDelegate.swift */,
 				1B72A4B7290CE2BB00E2F244 /* SceneDelegate.swift */,
 				1B72A4B9290CE2BB00E2F244 /* ViewController.swift */,
+				94767E182912F2E000023638 /* ReviewViewController.swift */,
+				94767E1A2912F51F00023638 /* AddReviewViewController.swift */,
+				94767E162912EF0E00023638 /* Review.swift */,
+				94767E0E2912E7B200023638 /* DetailViewController.swift */,
 				1B72A4BB290CE2BB00E2F244 /* Main.storyboard */,
 				1B72A4BE290CE2BD00E2F244 /* Assets.xcassets */,
 				1B72A4C0290CE2BD00E2F244 /* LaunchScreen.storyboard */,
@@ -168,6 +182,7 @@
 				1B72A4E9290EE8AD00E2F244 /* dataStructure.swift */,
 				1B72A4EB290F129600E2F244 /* favoriteViewController.swift */,
 				1B184B042910915E001395A7 /* webViewController.swift */,
+				94767E0C2912E6F000023638 /* MapViewController.swift */,
 			);
 			path = BearBurp;
 			sourceTree = "<group>";
@@ -335,7 +350,12 @@
 				1B72A4E6290D9C8400E2F244 /* movieCollectionViewCell.swift in Sources */,
 				1B184B052910915E001395A7 /* webViewController.swift in Sources */,
 				1B72A4EA290EE8AD00E2F244 /* dataStructure.swift in Sources */,
+				94767E1B2912F51F00023638 /* AddReviewViewController.swift in Sources */,
+				94767E172912EF0E00023638 /* Review.swift in Sources */,
+				94767E0F2912E7B200023638 /* DetailViewController.swift in Sources */,
+				94767E192912F2E000023638 /* ReviewViewController.swift in Sources */,
 				1B184AF6290F3685001395A7 /* FMDatabaseAdditions.m in Sources */,
+				94767E0D2912E6F000023638 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
