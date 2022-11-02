@@ -29,12 +29,14 @@
 		1B72A4E8290EE62400E2F244 /* detailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4E7290EE62400E2F244 /* detailedViewController.swift */; };
 		1B72A4EA290EE8AD00E2F244 /* dataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4E9290EE8AD00E2F244 /* dataStructure.swift */; };
 		1B72A4EC290F129600E2F244 /* favoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4EB290F129600E2F244 /* favoriteViewController.swift */; };
-		94767E0D2912E6F000023638 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E0C2912E6F000023638 /* MapViewController.swift */; };
 		94767E0F2912E7B200023638 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E0E2912E7B200023638 /* DetailViewController.swift */; };
 		94767E172912EF0E00023638 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E162912EF0E00023638 /* Review.swift */; };
 		94767E192912F2E000023638 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E182912F2E000023638 /* ReviewViewController.swift */; };
 		94767E1B2912F51F00023638 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E1A2912F51F00023638 /* AddReviewViewController.swift */; };
 		94767E1D291301DA00023638 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E1C291301DA00023638 /* LoadingView.swift */; };
+		94767E2129131DF300023638 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E2029131DF300023638 /* MapViewController.swift */; };
+		94767E24291320D400023638 /* MapARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E23291320D400023638 /* MapARView.swift */; };
+		94767E262913225600023638 /* MapARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E252913225600023638 /* MapARViewRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,12 +90,14 @@
 		1B72A4E7290EE62400E2F244 /* detailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailedViewController.swift; sourceTree = "<group>"; };
 		1B72A4E9290EE8AD00E2F244 /* dataStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataStructure.swift; sourceTree = "<group>"; };
 		1B72A4EB290F129600E2F244 /* favoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteViewController.swift; sourceTree = "<group>"; };
-		94767E0C2912E6F000023638 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		94767E0E2912E7B200023638 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		94767E162912EF0E00023638 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		94767E182912F2E000023638 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		94767E1A2912F51F00023638 /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 		94767E1C291301DA00023638 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		94767E2029131DF300023638 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		94767E23291320D400023638 /* MapARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapARView.swift; sourceTree = "<group>"; };
+		94767E252913225600023638 /* MapARViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapARViewRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,7 @@
 		1B72A4B4290CE2BB00E2F244 /* BearBurp */ = {
 			isa = PBXGroup;
 			children = (
+				94767E22291320BE00023638 /* AR */,
 				1B184B02290F559F001395A7 /* favorites.db */,
 				1B72A4B5290CE2BB00E2F244 /* AppDelegate.swift */,
 				1B72A4B7290CE2BB00E2F244 /* SceneDelegate.swift */,
@@ -184,7 +189,6 @@
 				1B72A4E9290EE8AD00E2F244 /* dataStructure.swift */,
 				1B72A4EB290F129600E2F244 /* favoriteViewController.swift */,
 				1B184B042910915E001395A7 /* webViewController.swift */,
-				94767E0C2912E6F000023638 /* MapViewController.swift */,
 				94767E1C291301DA00023638 /* LoadingView.swift */,
 			);
 			path = BearBurp;
@@ -205,6 +209,16 @@
 				1B72A4D8290CE2BE00E2F244 /* JiarongLiang_Lab4UITestsLaunchTests.swift */,
 			);
 			path = BearBurpUITests;
+			sourceTree = "<group>";
+		};
+		94767E22291320BE00023638 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				94767E2029131DF300023638 /* MapViewController.swift */,
+				94767E23291320D400023638 /* MapARView.swift */,
+				94767E252913225600023638 /* MapARViewRepresentable.swift */,
+			);
+			path = AR;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,7 +358,10 @@
 				1B72A4E8290EE62400E2F244 /* detailedViewController.swift in Sources */,
 				1B72A4BA290CE2BB00E2F244 /* ViewController.swift in Sources */,
 				1B72A4EC290F129600E2F244 /* favoriteViewController.swift in Sources */,
+				94767E2129131DF300023638 /* MapViewController.swift in Sources */,
 				1B184AF7290F3685001395A7 /* FMDatabase.m in Sources */,
+				94767E24291320D400023638 /* MapARView.swift in Sources */,
+				94767E262913225600023638 /* MapARViewRepresentable.swift in Sources */,
 				1B184AF8290F3685001395A7 /* FMResultSet.m in Sources */,
 				1B184AFA290F3685001395A7 /* FMDatabaseQueue.m in Sources */,
 				1B184AF9290F3685001395A7 /* FMDatabasePool.m in Sources */,
@@ -359,7 +376,6 @@
 				94767E192912F2E000023638 /* ReviewViewController.swift in Sources */,
 				1B184AF6290F3685001395A7 /* FMDatabaseAdditions.m in Sources */,
 				94767E1D291301DA00023638 /* LoadingView.swift in Sources */,
-				94767E0D2912E6F000023638 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,8 +553,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RTF5TJVD55;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BearBurp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera Needed For AR View";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -550,7 +568,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = lll.BearBurp;
+				PRODUCT_BUNDLE_IDENTIFIER = demo.BearBurp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "JiarongLiang-Lab4-Bridging-Header.h";
@@ -568,8 +586,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RTF5TJVD55;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BearBurp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera Needed For AR View";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -581,7 +601,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = lll.BearBurp;
+				PRODUCT_BUNDLE_IDENTIFIER = demo.BearBurp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "JiarongLiang-Lab4-Bridging-Header.h";

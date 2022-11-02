@@ -301,7 +301,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="tVR-PK-X9s" kind="relationship" relationship="viewControllers" id="KBP-MP-GGg"/>
-                        <segue destination="sp1-Vu-bHA" kind="relationship" relationship="viewControllers" id="BeD-U6-t0b"/>
+                        <segue destination="Crf-oa-EJ4" kind="relationship" relationship="viewControllers" id="Uyi-nv-bdV"/>
                         <segue destination="8kq-ZB-dXk" kind="relationship" relationship="viewControllers" id="qhv-2j-qIT"/>
                     </connections>
                 </tabBarController>
@@ -310,20 +310,14 @@
             <point key="canvasLocation" x="24.615384615384613" y="-28.436018957345969"/>
         </scene>
         <!--Map-->
-        <scene sceneID="aaW-wn-Koz">
+        <scene sceneID="A6t-pI-LgC">
             <objects>
-                <viewController id="sp1-Vu-bHA" customClass="MapViewController" customModule="BearBurp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UGO-BA-hiv">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Bee-cQ-SDk"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="FEX-SJ-gvf"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="37P-xr-eb0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <hostingController id="Crf-oa-EJ4" customClass="MapViewController" customModule="BearBurp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="FHI-a8-rEY"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JCD-r3-oou" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-671" y="680"/>
+            <point key="canvasLocation" x="-648" y="680"/>
         </scene>
         <!--Favorite-->
         <scene sceneID="IiD-zj-0D1">
