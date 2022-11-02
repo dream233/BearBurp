@@ -32,39 +32,14 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="jAU-sz-10p" customClass="movieCollectionViewCell" customModule="BearBurp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="41.333333333333343" height="90"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mycell" id="jAU-sz-10p" customClass="movieCollectionViewCell" customModule="BearBurp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tVy-PO-d88">
-                                            <rect key="frame" x="0.0" y="0.0" width="41.333333333333343" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ddq-sY-My8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="90"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7U-h0-GYG">
-                                                    <rect key="frame" x="0.0" y="69.666666666666671" width="41.333333333333336" height="20.333333333333329"/>
-                                                    <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="ddq-sY-My8" firstAttribute="top" secondItem="tVy-PO-d88" secondAttribute="top" id="9kg-MO-tPw"/>
-                                                <constraint firstAttribute="trailing" secondItem="ddq-sY-My8" secondAttribute="trailing" id="IXk-aE-1ic"/>
-                                                <constraint firstAttribute="bottom" secondItem="ddq-sY-My8" secondAttribute="bottom" id="NTa-Wi-edN"/>
-                                                <constraint firstAttribute="trailing" secondItem="Z7U-h0-GYG" secondAttribute="trailing" id="gtk-AQ-Bbz"/>
-                                                <constraint firstItem="Z7U-h0-GYG" firstAttribute="leading" secondItem="tVy-PO-d88" secondAttribute="leading" id="muP-Oa-aHz"/>
-                                                <constraint firstAttribute="bottom" secondItem="Z7U-h0-GYG" secondAttribute="bottom" id="rAC-hQ-a95"/>
-                                                <constraint firstItem="ddq-sY-My8" firstAttribute="leading" secondItem="tVy-PO-d88" secondAttribute="leading" id="wbD-hX-6Vp"/>
-                                            </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" systemColor="labelColor"/>
-                                        <connections>
-                                            <outlet property="movieImageView" destination="ddq-sY-My8" id="20Z-bA-dK0"/>
-                                            <outlet property="movieTitle" destination="Z7U-h0-GYG" id="l9L-3S-9hK"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -83,10 +58,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="UKl-CW-KXm" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4Ub-ab-ycB"/>
-                            <constraint firstItem="Xa8-SW-DAg" firstAttribute="trailing" secondItem="UKl-CW-KXm" secondAttribute="trailing" id="5gd-S4-QzP"/>
+                            <constraint firstItem="UKl-CW-KXm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6Fv-Sd-1Fa"/>
+                            <constraint firstItem="Xa8-SW-DAg" firstAttribute="leading" secondItem="UKl-CW-KXm" secondAttribute="leading" id="E7A-BC-RF9"/>
+                            <constraint firstItem="UKl-CW-KXm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SeH-jq-wLJ"/>
                             <constraint firstItem="Xa8-SW-DAg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-5" id="Tsf-aM-bIP"/>
-                            <constraint firstItem="Xa8-SW-DAg" firstAttribute="leading" secondItem="UKl-CW-KXm" secondAttribute="leading" id="UAV-r1-ilA"/>
-                            <constraint firstItem="UKl-CW-KXm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YdA-3o-zo9"/>
                             <constraint firstItem="UKl-CW-KXm" firstAttribute="top" secondItem="Xa8-SW-DAg" secondAttribute="bottom" id="s9d-kT-K89"/>
                             <constraint firstItem="Xa8-SW-DAg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tel-Mg-UAb"/>
                         </constraints>
@@ -106,7 +81,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="UKl-CW-KXm" id="b0B-nd-m6O"/>
+                        <outlet property="collectionView" destination="UKl-CW-KXm" id="hor-Lw-yMj"/>
                         <outlet property="searchBar" destination="Xa8-SW-DAg" id="DRu-Ut-aJ6"/>
                     </connections>
                 </viewController>
@@ -379,9 +354,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -34,6 +34,7 @@
 		94767E172912EF0E00023638 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E162912EF0E00023638 /* Review.swift */; };
 		94767E192912F2E000023638 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E182912F2E000023638 /* ReviewViewController.swift */; };
 		94767E1B2912F51F00023638 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E1A2912F51F00023638 /* AddReviewViewController.swift */; };
+		94767E1D291301DA00023638 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E1C291301DA00023638 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		94767E162912EF0E00023638 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		94767E182912F2E000023638 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		94767E1A2912F51F00023638 /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
+		94767E1C291301DA00023638 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 				1B72A4EB290F129600E2F244 /* favoriteViewController.swift */,
 				1B184B042910915E001395A7 /* webViewController.swift */,
 				94767E0C2912E6F000023638 /* MapViewController.swift */,
+				94767E1C291301DA00023638 /* LoadingView.swift */,
 			);
 			path = BearBurp;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				94767E0F2912E7B200023638 /* DetailViewController.swift in Sources */,
 				94767E192912F2E000023638 /* ReviewViewController.swift in Sources */,
 				1B184AF6290F3685001395A7 /* FMDatabaseAdditions.m in Sources */,
+				94767E1D291301DA00023638 /* LoadingView.swift in Sources */,
 				94767E0D2912E6F000023638 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
