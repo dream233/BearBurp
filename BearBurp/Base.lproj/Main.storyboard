@@ -289,6 +289,33 @@
             </objects>
             <point key="canvasLocation" x="4480" y="-28.436018957345969"/>
         </scene>
+        <!--Map-->
+        <scene sceneID="Byj-OI-aGv">
+            <objects>
+                <viewController id="slV-hx-2ZD" customClass="MapViewController" customModule="BearBurp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qub-Rv-otu">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezl-KN-k83">
+                                <rect key="frame" x="150" y="177" width="103" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="AR"/>
+                                <connections>
+                                    <action selector="arClicked:" destination="slV-hx-2ZD" eventType="touchUpInside" id="gj8-3H-eyq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dtN-mJ-29h"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="Dzh-ul-ew5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nVV-PS-R6o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-452.30769230769226" y="679.62085308056874"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7y3-Jd-u54">
             <objects>
@@ -301,23 +328,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="tVR-PK-X9s" kind="relationship" relationship="viewControllers" id="KBP-MP-GGg"/>
-                        <segue destination="Crf-oa-EJ4" kind="relationship" relationship="viewControllers" id="Uyi-nv-bdV"/>
+                        <segue destination="slV-hx-2ZD" kind="relationship" relationship="viewControllers" id="sTn-bE-jPN"/>
                         <segue destination="8kq-ZB-dXk" kind="relationship" relationship="viewControllers" id="qhv-2j-qIT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vL-7F-Lno" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.615384615384613" y="-28.436018957345969"/>
-        </scene>
-        <!--Map-->
-        <scene sceneID="A6t-pI-LgC">
-            <objects>
-                <hostingController id="Crf-oa-EJ4" customClass="MapViewController" customModule="BearBurp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="FHI-a8-rEY"/>
-                </hostingController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JCD-r3-oou" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-648" y="680"/>
         </scene>
         <!--Favorite-->
         <scene sceneID="IiD-zj-0D1">

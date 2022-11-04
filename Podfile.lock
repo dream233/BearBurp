@@ -1,0 +1,16 @@
+PODS:
+  - HDAugmentedReality (3.0.0)
+
+DEPENDENCIES:
+  - HDAugmentedReality (~> 3.0)
+
+SPEC REPOS:
+  trunk:
+    - HDAugmentedReality
+
+SPEC CHECKSUMS:
+  HDAugmentedReality: ff518e9c08704261b4226ffa820464aa5a9b1626
+
+PODFILE CHECKSUM: ef14f4d6723710be89da76ad228c0dc5a5767efe
+
+COCOAPODS: 1.11.3

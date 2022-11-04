@@ -29,14 +29,17 @@
 		1B72A4E8290EE62400E2F244 /* detailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4E7290EE62400E2F244 /* detailedViewController.swift */; };
 		1B72A4EA290EE8AD00E2F244 /* dataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4E9290EE8AD00E2F244 /* dataStructure.swift */; };
 		1B72A4EC290F129600E2F244 /* favoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4EB290F129600E2F244 /* favoriteViewController.swift */; };
+		256687D0E13C558F84BF0C70 /* Pods_BearBurp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B924489C656DACC1BC3DC01 /* Pods_BearBurp.framework */; };
 		94767E0F2912E7B200023638 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E0E2912E7B200023638 /* DetailViewController.swift */; };
 		94767E172912EF0E00023638 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E162912EF0E00023638 /* Review.swift */; };
 		94767E192912F2E000023638 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E182912F2E000023638 /* ReviewViewController.swift */; };
 		94767E1B2912F51F00023638 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E1A2912F51F00023638 /* AddReviewViewController.swift */; };
 		94767E1D291301DA00023638 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E1C291301DA00023638 /* LoadingView.swift */; };
-		94767E2129131DF300023638 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E2029131DF300023638 /* MapViewController.swift */; };
-		94767E24291320D400023638 /* MapARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E23291320D400023638 /* MapARView.swift */; };
-		94767E262913225600023638 /* MapARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E252913225600023638 /* MapARViewRepresentable.swift */; };
+		947C282D29146E750062521F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C282C29146E750062521F /* MapViewController.swift */; };
+		94D7AE972914A386008E1088 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7AE962914A386008E1088 /* AnnotationView.swift */; };
+		94D7AE992914A4B6008E1088 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7AE982914A4B6008E1088 /* Place.swift */; };
+		D1BB77673CD54AE2A17B83F1 /* Pods_BearBurpTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634F22739BB04846EFD3A2EA /* Pods_BearBurpTests.framework */; };
+		F0E55E15EB955A656289D997 /* Pods_BearBurp_BearBurpUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A51509275FD50CA05FB4A57D /* Pods_BearBurp_BearBurpUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14583FD15449B2609EA53A64 /* Pods-BearBurp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearBurp.release.xcconfig"; path = "Target Support Files/Pods-BearBurp/Pods-BearBurp.release.xcconfig"; sourceTree = "<group>"; };
 		1B184AEA290F3683001395A7 /* JiarongLiang-Lab4-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JiarongLiang-Lab4-Bridging-Header.h"; sourceTree = "<group>"; };
 		1B184AEB290F3684001395A7 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
 		1B184AEC290F3684001395A7 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -90,14 +94,22 @@
 		1B72A4E7290EE62400E2F244 /* detailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailedViewController.swift; sourceTree = "<group>"; };
 		1B72A4E9290EE8AD00E2F244 /* dataStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataStructure.swift; sourceTree = "<group>"; };
 		1B72A4EB290F129600E2F244 /* favoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteViewController.swift; sourceTree = "<group>"; };
+		380844A232E1F6F0940A6977 /* Pods-BearBurp-BearBurpUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearBurp-BearBurpUITests.release.xcconfig"; path = "Target Support Files/Pods-BearBurp-BearBurpUITests/Pods-BearBurp-BearBurpUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3B924489C656DACC1BC3DC01 /* Pods_BearBurp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BearBurp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FF969412F71E650143DE34B /* Pods-BearBurpTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearBurpTests.debug.xcconfig"; path = "Target Support Files/Pods-BearBurpTests/Pods-BearBurpTests.debug.xcconfig"; sourceTree = "<group>"; };
+		634F22739BB04846EFD3A2EA /* Pods_BearBurpTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BearBurpTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BC14F89ADFDD19229F1164A /* Pods-BearBurp-BearBurpUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearBurp-BearBurpUITests.debug.xcconfig"; path = "Target Support Files/Pods-BearBurp-BearBurpUITests/Pods-BearBurp-BearBurpUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		94767E0E2912E7B200023638 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		94767E162912EF0E00023638 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		94767E182912F2E000023638 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		94767E1A2912F51F00023638 /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 		94767E1C291301DA00023638 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		94767E2029131DF300023638 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		94767E23291320D400023638 /* MapARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapARView.swift; sourceTree = "<group>"; };
-		94767E252913225600023638 /* MapARViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapARViewRepresentable.swift; sourceTree = "<group>"; };
+		947C282C29146E750062521F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		94D7AE962914A386008E1088 /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
+		94D7AE982914A4B6008E1088 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		A51509275FD50CA05FB4A57D /* Pods_BearBurp_BearBurpUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BearBurp_BearBurpUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6D23519DF75F056B9A70989 /* Pods-BearBurp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearBurp.debug.xcconfig"; path = "Target Support Files/Pods-BearBurp/Pods-BearBurp.debug.xcconfig"; sourceTree = "<group>"; };
+		F52B42726495C7A240F553CB /* Pods-BearBurpTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearBurpTests.release.xcconfig"; path = "Target Support Files/Pods-BearBurpTests/Pods-BearBurpTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B184AFD290F3771001395A7 /* libsqlite3.tbd in Frameworks */,
+				256687D0E13C558F84BF0C70 /* Pods_BearBurp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1BB77673CD54AE2A17B83F1 /* Pods_BearBurpTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0E55E15EB955A656289D997 /* Pods_BearBurp_BearBurpUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +145,9 @@
 			isa = PBXGroup;
 			children = (
 				1B184AFC290F3771001395A7 /* libsqlite3.tbd */,
+				3B924489C656DACC1BC3DC01 /* Pods_BearBurp.framework */,
+				A51509275FD50CA05FB4A57D /* Pods_BearBurp_BearBurpUITests.framework */,
+				634F22739BB04846EFD3A2EA /* Pods_BearBurpTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -155,6 +173,7 @@
 				1B72A4B3290CE2BB00E2F244 /* Products */,
 				1B184AEA290F3683001395A7 /* JiarongLiang-Lab4-Bridging-Header.h */,
 				1B184AFB290F3771001395A7 /* Frameworks */,
+				76ABEB5C4BE77437E4E9BCB2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,7 +190,6 @@
 		1B72A4B4290CE2BB00E2F244 /* BearBurp */ = {
 			isa = PBXGroup;
 			children = (
-				94767E22291320BE00023638 /* AR */,
 				1B184B02290F559F001395A7 /* favorites.db */,
 				1B72A4B5290CE2BB00E2F244 /* AppDelegate.swift */,
 				1B72A4B7290CE2BB00E2F244 /* SceneDelegate.swift */,
@@ -190,6 +208,9 @@
 				1B72A4EB290F129600E2F244 /* favoriteViewController.swift */,
 				1B184B042910915E001395A7 /* webViewController.swift */,
 				94767E1C291301DA00023638 /* LoadingView.swift */,
+				947C282C29146E750062521F /* MapViewController.swift */,
+				94D7AE962914A386008E1088 /* AnnotationView.swift */,
+				94D7AE982914A4B6008E1088 /* Place.swift */,
 			);
 			path = BearBurp;
 			sourceTree = "<group>";
@@ -211,14 +232,17 @@
 			path = BearBurpUITests;
 			sourceTree = "<group>";
 		};
-		94767E22291320BE00023638 /* AR */ = {
+		76ABEB5C4BE77437E4E9BCB2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				94767E2029131DF300023638 /* MapViewController.swift */,
-				94767E23291320D400023638 /* MapARView.swift */,
-				94767E252913225600023638 /* MapARViewRepresentable.swift */,
+				B6D23519DF75F056B9A70989 /* Pods-BearBurp.debug.xcconfig */,
+				14583FD15449B2609EA53A64 /* Pods-BearBurp.release.xcconfig */,
+				7BC14F89ADFDD19229F1164A /* Pods-BearBurp-BearBurpUITests.debug.xcconfig */,
+				380844A232E1F6F0940A6977 /* Pods-BearBurp-BearBurpUITests.release.xcconfig */,
+				3FF969412F71E650143DE34B /* Pods-BearBurpTests.debug.xcconfig */,
+				F52B42726495C7A240F553CB /* Pods-BearBurpTests.release.xcconfig */,
 			);
-			path = AR;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,9 +252,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B72A4DC290CE2BE00E2F244 /* Build configuration list for PBXNativeTarget "BearBurp" */;
 			buildPhases = (
+				77CD5B61ADDB0AD051C6097C /* [CP] Check Pods Manifest.lock */,
 				1B72A4AE290CE2BB00E2F244 /* Sources */,
 				1B72A4AF290CE2BB00E2F244 /* Frameworks */,
 				1B72A4B0290CE2BB00E2F244 /* Resources */,
+				B5DD944A9673A82DB25289CE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -245,6 +271,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B72A4DF290CE2BE00E2F244 /* Build configuration list for PBXNativeTarget "BearBurpTests" */;
 			buildPhases = (
+				3EA1D7F16AC245169DA3A0EF /* [CP] Check Pods Manifest.lock */,
 				1B72A4C4290CE2BE00E2F244 /* Sources */,
 				1B72A4C5290CE2BE00E2F244 /* Frameworks */,
 				1B72A4C6290CE2BE00E2F244 /* Resources */,
@@ -263,9 +290,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B72A4E2290CE2BE00E2F244 /* Build configuration list for PBXNativeTarget "BearBurpUITests" */;
 			buildPhases = (
+				542312EE6606C195F67CAE92 /* [CP] Check Pods Manifest.lock */,
 				1B72A4CE290CE2BE00E2F244 /* Sources */,
 				1B72A4CF290CE2BE00E2F244 /* Frameworks */,
 				1B72A4D0290CE2BE00E2F244 /* Resources */,
+				156D94CA3DB26F33FDD16844 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -350,6 +379,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		156D94CA3DB26F33FDD16844 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BearBurp-BearBurpUITests/Pods-BearBurp-BearBurpUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BearBurp-BearBurpUITests/Pods-BearBurp-BearBurpUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BearBurp-BearBurpUITests/Pods-BearBurp-BearBurpUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EA1D7F16AC245169DA3A0EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BearBurpTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		542312EE6606C195F67CAE92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BearBurp-BearBurpUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77CD5B61ADDB0AD051C6097C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BearBurp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5DD944A9673A82DB25289CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BearBurp/Pods-BearBurp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BearBurp/Pods-BearBurp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BearBurp/Pods-BearBurp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1B72A4AE290CE2BB00E2F244 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -358,22 +490,22 @@
 				1B72A4E8290EE62400E2F244 /* detailedViewController.swift in Sources */,
 				1B72A4BA290CE2BB00E2F244 /* ViewController.swift in Sources */,
 				1B72A4EC290F129600E2F244 /* favoriteViewController.swift in Sources */,
-				94767E2129131DF300023638 /* MapViewController.swift in Sources */,
 				1B184AF7290F3685001395A7 /* FMDatabase.m in Sources */,
-				94767E24291320D400023638 /* MapARView.swift in Sources */,
-				94767E262913225600023638 /* MapARViewRepresentable.swift in Sources */,
 				1B184AF8290F3685001395A7 /* FMResultSet.m in Sources */,
 				1B184AFA290F3685001395A7 /* FMDatabaseQueue.m in Sources */,
 				1B184AF9290F3685001395A7 /* FMDatabasePool.m in Sources */,
 				1B72A4B6290CE2BB00E2F244 /* AppDelegate.swift in Sources */,
+				947C282D29146E750062521F /* MapViewController.swift in Sources */,
 				1B72A4B8290CE2BB00E2F244 /* SceneDelegate.swift in Sources */,
 				1B72A4E6290D9C8400E2F244 /* movieCollectionViewCell.swift in Sources */,
 				1B184B052910915E001395A7 /* webViewController.swift in Sources */,
+				94D7AE992914A4B6008E1088 /* Place.swift in Sources */,
 				1B72A4EA290EE8AD00E2F244 /* dataStructure.swift in Sources */,
 				94767E1B2912F51F00023638 /* AddReviewViewController.swift in Sources */,
 				94767E172912EF0E00023638 /* Review.swift in Sources */,
 				94767E0F2912E7B200023638 /* DetailViewController.swift in Sources */,
 				94767E192912F2E000023638 /* ReviewViewController.swift in Sources */,
+				94D7AE972914A386008E1088 /* AnnotationView.swift in Sources */,
 				1B184AF6290F3685001395A7 /* FMDatabaseAdditions.m in Sources */,
 				94767E1D291301DA00023638 /* LoadingView.swift in Sources */,
 			);
@@ -547,6 +679,7 @@
 		};
 		1B72A4DD290CE2BE00E2F244 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6D23519DF75F056B9A70989 /* Pods-BearBurp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -580,6 +713,7 @@
 		};
 		1B72A4DE290CE2BE00E2F244 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14583FD15449B2609EA53A64 /* Pods-BearBurp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -612,6 +746,7 @@
 		};
 		1B72A4E0290CE2BE00E2F244 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FF969412F71E650143DE34B /* Pods-BearBurpTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -631,6 +766,7 @@
 		};
 		1B72A4E1290CE2BE00E2F244 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F52B42726495C7A240F553CB /* Pods-BearBurpTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -650,6 +786,7 @@
 		};
 		1B72A4E3290CE2BE00E2F244 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BC14F89ADFDD19229F1164A /* Pods-BearBurp-BearBurpUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -667,6 +804,7 @@
 		};
 		1B72A4E4290CE2BE00E2F244 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 380844A232E1F6F0940A6977 /* Pods-BearBurp-BearBurpUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
