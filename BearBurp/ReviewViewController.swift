@@ -9,13 +9,14 @@ import UIKit
 
 class ReviewViewController: UIViewController {
 
-    var name: String = "namePlaceHolder"
+    var restaurant : Restaurant!
+    var reviews : reviewAPIData?
 //    var movieId: Int?
-    var reviewArray: [Review] = []
+//    var reviewArray: [Review] = []
     @IBOutlet weak var writeReviewBtn: UIButton!
     @IBAction func writeReviewBtnClicked(_ sender: Any) {
         let addReviewCV = self.storyboard?.instantiateViewController(withIdentifier: "addReview") as! AddReviewViewController
-        addReviewCV.name = name
+        addReviewCV.name = restaurant.name
         navigationController?.pushViewController(addReviewCV, animated: true)
     }
     @IBOutlet weak var restaurantName: UILabel!
@@ -24,7 +25,7 @@ class ReviewViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         
-        restaurantName.text = name
+        restaurantName.text = restaurant.name
         restaurantName.font = UIFont.boldSystemFont(ofSize: 25)
         restaurantName.numberOfLines = 0
         restaurantName.textAlignment = .left
@@ -64,16 +65,20 @@ class ReviewViewController: UIViewController {
     }
     
     func getReviewData(){
+        var url:URL?
+        url = URL(string: "http://3.83.69.24/~Charles/CSE438-final/fetchreview.php?&rid=\(restaurant.id)")
+        let data = try! Data(contentsOf: url!)
+        reviews = try! JSONDecoder().decode(reviewAPIData.self,from:data)
     }
 }
 
 extension ReviewViewController: UITableViewDelegate,UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return reviewArray.count
+        return reviews?.message.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -81,21 +86,22 @@ extension ReviewViewController: UITableViewDelegate,UITableViewDataSource {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         cell.layer.cornerRadius = 4
         cell.clipsToBounds = true
-        cell.textLabel!.text = reviewArray[indexPath.item].userName
+        
+        cell.textLabel!.text =  "User: \(reviews?.message[indexPath.item].uid ?? 0)    Rate:\(reviews?.message[indexPath.item].rating ?? 0)"
         cell.textLabel!.font = UIFont.systemFont(ofSize: 10)
         cell.textLabel?.textColor = UIColor.gray
         cell.detailTextLabel?.numberOfLines = 0
-        cell.detailTextLabel?.text = reviewArray[indexPath.item].review
+        cell.detailTextLabel?.text = "Content: \(reviews?.message[indexPath.item].content ?? "empty")"
         cell.detailTextLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         cell.detailTextLabel?.textColor = UIColor.black
-        let newImageData = Data(base64Encoded: reviewArray[indexPath.item].userAvar)
-        
-        var newImage = UIImage(data: newImageData!)
-        if(newImageData?.count==0){
-            newImage = UIImage(named: "black")
-        }
-
-        cell.imageView?.image = newImage
+//        let newImageData = Data(base64Encoded: reviews?.message[indexPath.item].userAvar)
+//
+//        var newImage = UIImage(data: newImageData!)
+//        if(newImageData?.count==0){
+//            newImage = UIImage(named: "black")
+//        }
+//
+//        cell.imageView?.image = newImage
         cell.isUserInteractionEnabled = false
         return cell
     }

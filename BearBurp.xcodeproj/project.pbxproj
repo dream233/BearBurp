@@ -31,7 +31,6 @@
 		1B72A4EC290F129600E2F244 /* favoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4EB290F129600E2F244 /* favoriteViewController.swift */; };
 		256687D0E13C558F84BF0C70 /* Pods_BearBurp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B924489C656DACC1BC3DC01 /* Pods_BearBurp.framework */; };
 		94767E0F2912E7B200023638 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E0E2912E7B200023638 /* DetailViewController.swift */; };
-		94767E172912EF0E00023638 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E162912EF0E00023638 /* Review.swift */; };
 		94767E192912F2E000023638 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E182912F2E000023638 /* ReviewViewController.swift */; };
 		94767E1B2912F51F00023638 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E1A2912F51F00023638 /* AddReviewViewController.swift */; };
 		94767E1D291301DA00023638 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E1C291301DA00023638 /* LoadingView.swift */; };
@@ -100,7 +99,6 @@
 		634F22739BB04846EFD3A2EA /* Pods_BearBurpTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BearBurpTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC14F89ADFDD19229F1164A /* Pods-BearBurp-BearBurpUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearBurp-BearBurpUITests.debug.xcconfig"; path = "Target Support Files/Pods-BearBurp-BearBurpUITests/Pods-BearBurp-BearBurpUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		94767E0E2912E7B200023638 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		94767E162912EF0E00023638 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		94767E182912F2E000023638 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		94767E1A2912F51F00023638 /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 		94767E1C291301DA00023638 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 				1B72A4B9290CE2BB00E2F244 /* ViewController.swift */,
 				94767E182912F2E000023638 /* ReviewViewController.swift */,
 				94767E1A2912F51F00023638 /* AddReviewViewController.swift */,
-				94767E162912EF0E00023638 /* Review.swift */,
 				94767E0E2912E7B200023638 /* DetailViewController.swift */,
 				1B72A4BB290CE2BB00E2F244 /* Main.storyboard */,
 				1B72A4BE290CE2BD00E2F244 /* Assets.xcassets */,
@@ -502,7 +499,6 @@
 				94D7AE992914A4B6008E1088 /* Place.swift in Sources */,
 				1B72A4EA290EE8AD00E2F244 /* dataStructure.swift in Sources */,
 				94767E1B2912F51F00023638 /* AddReviewViewController.swift in Sources */,
-				94767E172912EF0E00023638 /* Review.swift in Sources */,
 				94767E0F2912E7B200023638 /* DetailViewController.swift in Sources */,
 				94767E192912F2E000023638 /* ReviewViewController.swift in Sources */,
 				94D7AE972914A386008E1088 /* AnnotationView.swift in Sources */,

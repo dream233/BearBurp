@@ -33,6 +33,11 @@ struct foodAPIData:Decodable {
     let message: [Food]
 }
 
+struct reviewAPIData:Decodable {
+    let success: Bool
+    let message: [Review]
+}
+
 struct Restaurant:Decodable{
     let id : Int
     let name : String
@@ -48,3 +53,13 @@ struct Food:Decodable{
     let rating:Float
     let price:Float
 }
+
+struct Review:Decodable {
+    let id: Int
+    let uid:Int
+    let rid:Int
+    let title:String
+    let content:String
+    let rating:Float
+}
+

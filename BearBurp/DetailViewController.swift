@@ -19,7 +19,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var restaurantImages: UIImageView!
     @IBAction func reviewClicked(_ sender: Any) {
         let reviewVC = self.storyboard?.instantiateViewController(withIdentifier: "review") as! ReviewViewController
-        reviewVC.name = restaurant.name
+        reviewVC.restaurant = restaurant
         navigationController?.pushViewController(reviewVC, animated: true)
     }
     override func viewDidLoad() {
@@ -40,7 +40,6 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         url = URL(string: "http://3.83.69.24/~Charles/CSE438-final/fetchfood.php?&rid=\(restaurant.id)")
         let data = try! Data(contentsOf: url!)
         foods = try! JSONDecoder().decode(foodAPIData.self,from:data)
-//        print(foods?.message)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,6 +51,9 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         cell.textLabel!.text = foods?.message[indexPath.row].name
         return cell
     }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
     
     
 }
