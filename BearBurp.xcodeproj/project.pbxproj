@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B04312F2919651C00B4DD60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04312E2919651C00B4DD60 /* LoginViewController.swift */; };
 		1B184AF6290F3685001395A7 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B184AEB290F3684001395A7 /* FMDatabaseAdditions.m */; };
 		1B184AF7290F3685001395A7 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B184AED290F3684001395A7 /* FMDatabase.m */; };
 		1B184AF8290F3685001395A7 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B184AEF290F3684001395A7 /* FMResultSet.m */; };
@@ -25,10 +26,7 @@
 		1B72A4CD290CE2BE00E2F244 /* BearBurpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4CC290CE2BE00E2F244 /* BearBurpTests.swift */; };
 		1B72A4D7290CE2BE00E2F244 /* JiarongLiang_Lab4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4D6290CE2BE00E2F244 /* JiarongLiang_Lab4UITests.swift */; };
 		1B72A4D9290CE2BE00E2F244 /* JiarongLiang_Lab4UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4D8290CE2BE00E2F244 /* JiarongLiang_Lab4UITestsLaunchTests.swift */; };
-		1B72A4E6290D9C8400E2F244 /* movieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4E5290D9C8400E2F244 /* movieCollectionViewCell.swift */; };
-		1B72A4E8290EE62400E2F244 /* detailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4E7290EE62400E2F244 /* detailedViewController.swift */; };
 		1B72A4EA290EE8AD00E2F244 /* dataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4E9290EE8AD00E2F244 /* dataStructure.swift */; };
-		1B72A4EC290F129600E2F244 /* favoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4EB290F129600E2F244 /* favoriteViewController.swift */; };
 		256687D0E13C558F84BF0C70 /* Pods_BearBurp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B924489C656DACC1BC3DC01 /* Pods_BearBurp.framework */; };
 		94767E0F2912E7B200023638 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E0E2912E7B200023638 /* DetailViewController.swift */; };
 		94767E192912F2E000023638 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E182912F2E000023638 /* ReviewViewController.swift */; };
@@ -60,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		14583FD15449B2609EA53A64 /* Pods-BearBurp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearBurp.release.xcconfig"; path = "Target Support Files/Pods-BearBurp/Pods-BearBurp.release.xcconfig"; sourceTree = "<group>"; };
+		1B04312E2919651C00B4DD60 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1B184AEA290F3683001395A7 /* JiarongLiang-Lab4-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JiarongLiang-Lab4-Bridging-Header.h"; sourceTree = "<group>"; };
 		1B184AEB290F3684001395A7 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
 		1B184AEC290F3684001395A7 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -89,10 +88,7 @@
 		1B72A4D2290CE2BE00E2F244 /* BearBurpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BearBurpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B72A4D6290CE2BE00E2F244 /* JiarongLiang_Lab4UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiarongLiang_Lab4UITests.swift; sourceTree = "<group>"; };
 		1B72A4D8290CE2BE00E2F244 /* JiarongLiang_Lab4UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiarongLiang_Lab4UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		1B72A4E5290D9C8400E2F244 /* movieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieCollectionViewCell.swift; sourceTree = "<group>"; };
-		1B72A4E7290EE62400E2F244 /* detailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailedViewController.swift; sourceTree = "<group>"; };
 		1B72A4E9290EE8AD00E2F244 /* dataStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataStructure.swift; sourceTree = "<group>"; };
-		1B72A4EB290F129600E2F244 /* favoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteViewController.swift; sourceTree = "<group>"; };
 		380844A232E1F6F0940A6977 /* Pods-BearBurp-BearBurpUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearBurp-BearBurpUITests.release.xcconfig"; path = "Target Support Files/Pods-BearBurp-BearBurpUITests/Pods-BearBurp-BearBurpUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3B924489C656DACC1BC3DC01 /* Pods_BearBurp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BearBurp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF969412F71E650143DE34B /* Pods-BearBurpTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearBurpTests.debug.xcconfig"; path = "Target Support Files/Pods-BearBurpTests/Pods-BearBurpTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -199,15 +195,13 @@
 				1B72A4BE290CE2BD00E2F244 /* Assets.xcassets */,
 				1B72A4C0290CE2BD00E2F244 /* LaunchScreen.storyboard */,
 				1B72A4C3290CE2BD00E2F244 /* Info.plist */,
-				1B72A4E5290D9C8400E2F244 /* movieCollectionViewCell.swift */,
-				1B72A4E7290EE62400E2F244 /* detailedViewController.swift */,
 				1B72A4E9290EE8AD00E2F244 /* dataStructure.swift */,
-				1B72A4EB290F129600E2F244 /* favoriteViewController.swift */,
 				1B184B042910915E001395A7 /* webViewController.swift */,
 				94767E1C291301DA00023638 /* LoadingView.swift */,
 				947C282C29146E750062521F /* MapViewController.swift */,
 				94D7AE962914A386008E1088 /* AnnotationView.swift */,
 				94D7AE982914A4B6008E1088 /* Place.swift */,
+				1B04312E2919651C00B4DD60 /* LoginViewController.swift */,
 			);
 			path = BearBurp;
 			sourceTree = "<group>";
@@ -484,9 +478,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B72A4E8290EE62400E2F244 /* detailedViewController.swift in Sources */,
+				1B04312F2919651C00B4DD60 /* LoginViewController.swift in Sources */,
 				1B72A4BA290CE2BB00E2F244 /* ViewController.swift in Sources */,
-				1B72A4EC290F129600E2F244 /* favoriteViewController.swift in Sources */,
 				1B184AF7290F3685001395A7 /* FMDatabase.m in Sources */,
 				1B184AF8290F3685001395A7 /* FMResultSet.m in Sources */,
 				1B184AFA290F3685001395A7 /* FMDatabaseQueue.m in Sources */,
@@ -494,7 +487,6 @@
 				1B72A4B6290CE2BB00E2F244 /* AppDelegate.swift in Sources */,
 				947C282D29146E750062521F /* MapViewController.swift in Sources */,
 				1B72A4B8290CE2BB00E2F244 /* SceneDelegate.swift in Sources */,
-				1B72A4E6290D9C8400E2F244 /* movieCollectionViewCell.swift in Sources */,
 				1B184B052910915E001395A7 /* webViewController.swift in Sources */,
 				94D7AE992914A4B6008E1088 /* Place.swift in Sources */,
 				1B72A4EA290EE8AD00E2F244 /* dataStructure.swift in Sources */,
@@ -682,10 +674,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 24226NFVWT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BearBurp/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera Needed For AR View";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Use location while using AR";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Use location while using AR";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -697,7 +691,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = demo.BearBurp;
+				PRODUCT_BUNDLE_IDENTIFIER = test.BearBurp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "JiarongLiang-Lab4-Bridging-Header.h";
@@ -716,10 +710,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 24226NFVWT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BearBurp/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera Needed For AR View";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Use location while using AR";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Use location while using AR";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -731,7 +727,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = demo.BearBurp;
+				PRODUCT_BUNDLE_IDENTIFIER = test.BearBurp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "JiarongLiang-Lab4-Bridging-Header.h";

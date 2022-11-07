@@ -40,9 +40,6 @@ class ReviewViewController: UIViewController {
         let addReviewButtonFrame = CGRect(x: 295, y: 100, width: 93, height: 31)
         writeReviewBtn.frame = addReviewButtonFrame
         
-        
-        
-        
         let reviewFrame = CGRect(x: 16, y: 142, width: 358, height: 608)
         restaurantTableView.frame = reviewFrame
         restaurantTableView.backgroundColor = .black

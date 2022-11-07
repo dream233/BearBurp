@@ -120,7 +120,7 @@
         <scene sceneID="O5V-S5-Qcu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tVR-PK-X9s" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Movies" image="film" id="2fZ-wm-fPr"/>
+                    <tabBarItem key="tabBarItem" title="Movies" image="film" catalog="system" id="2fZ-wm-fPr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jWA-SJ-SKr">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
@@ -292,6 +292,22 @@
             </objects>
             <point key="canvasLocation" x="4480" y="-28.436018957345969"/>
         </scene>
+        <!--Login-->
+        <scene sceneID="ad9-Lr-XJN">
+            <objects>
+                <viewController id="IdW-Hq-XTm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lzv-tf-6zm">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="lh7-KJ-Jdp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Login" image="person" catalog="system" id="OZv-fj-xAj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fdh-iI-zK5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1425" y="697"/>
+        </scene>
         <!--Map-->
         <scene sceneID="Byj-OI-aGv">
             <objects>
@@ -333,6 +349,7 @@
                         <segue destination="tVR-PK-X9s" kind="relationship" relationship="viewControllers" id="KBP-MP-GGg"/>
                         <segue destination="slV-hx-2ZD" kind="relationship" relationship="viewControllers" id="sTn-bE-jPN"/>
                         <segue destination="8kq-ZB-dXk" kind="relationship" relationship="viewControllers" id="qhv-2j-qIT"/>
+                        <segue destination="IdW-Hq-XTm" kind="relationship" relationship="viewControllers" id="ug7-ak-GUV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vL-7F-Lno" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -343,7 +360,7 @@
         <scene sceneID="IiD-zj-0D1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8kq-ZB-dXk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorite" image="favorite" id="a5Y-uh-AWs"/>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="heart" catalog="system" id="a5Y-uh-AWs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zj3-gZ-FwS">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
@@ -360,9 +377,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="favorite" width="35" height="35"/>
-        <image name="film" width="35" height="35"/>
+        <image name="film" catalog="system" width="128" height="93"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="map" catalog="system" width="128" height="112"/>
+        <image name="person" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

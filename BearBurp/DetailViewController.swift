@@ -47,8 +47,9 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
         cell.textLabel!.text = foods?.message[indexPath.row].name
+        cell.detailTextLabel!.text = "\(foods?.message[indexPath.row].price ?? 0.0) $"
         return cell
     }
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

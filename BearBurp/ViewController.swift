@@ -169,7 +169,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate,U
         title.font = UIFont(name: "Futura", size: CGFloat(14))
         imageview.addSubview(title)
         
-        let rate = UILabel(frame: CGRect(x: 0, y: 150, width: view.frame.size.width/2 - 3, height: 30))
+        let rate = UILabel(frame: CGRect(x: 280, y: 120, width: view.frame.size.width/2 - 3, height: 30))
         let vote = theData?.message[indexPath.item].rating ?? 0.0
         let rateString = "Vote Average: \(vote)"
         let mString = NSMutableAttributedString(string: rateString)
