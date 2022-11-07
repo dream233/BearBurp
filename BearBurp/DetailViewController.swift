@@ -7,15 +7,35 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class DetailViewController: UIViewController{
     
     var restaurant : Restaurant!
     var image : UIImage!
     var foods : foodAPIData?
+    let defaults = UserDefaults.standard
     
     @IBOutlet weak var restaurantTableView: UITableView!
     @IBOutlet weak var restaurantRate: UILabel!
     @IBOutlet weak var restaurantName: UILabel!
+    @IBOutlet weak var favoriteBtn: UIButton!
+    @IBAction func favoriteBtnClicked(_ sender: Any) {
+        if(defaults.object(forKey: "Favorite_\(restaurant.id)") == nil){
+            
+            let encoder = JSONEncoder()
+            let defaults = UserDefaults.standard
+            
+            if let encoded = try? encoder.encode(restaurant) {
+                defaults.set(encoded, forKey: "Favorite_\(restaurant.id)")
+            }
+            
+            favoriteBtn.setTitle(" Liked", for: .normal)
+            favoriteBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }else{
+            defaults.removeObject(forKey: "Favorite_\(restaurant.id)")
+            favoriteBtn.setTitle(" Like", for: .normal)
+            favoriteBtn.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
+    }
     @IBOutlet weak var restaurantImages: UIImageView!
     @IBAction func reviewClicked(_ sender: Any) {
         let reviewVC = self.storyboard?.instantiateViewController(withIdentifier: "review") as! ReviewViewController
@@ -24,6 +44,42 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+//        setLikedButton()
+        addLoadingView()
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.fetchFood()
+            DispatchQueue.main.async {
+                self.viewSetUp()
+                self.removeLoadingView()
+                self.restaurantTableView.reloadData()
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setLikedButton()
+    }
+    
+    func addLoadingView(){
+        let loadingView: LoadingView = LoadingView(frame: CGRect(x: view.frame.size.width/2-50, y: view.frame.size.height/2-50, width: 100, height: 100))
+
+        loadingView.backgroundColor = UIColor(displayP3Red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 0.3)
+        UIView.transition(with: view, duration: 0.25, options: [.transitionCrossDissolve], animations: {
+            self.view.addSubview(loadingView)
+        }, completion: nil)
+    }
+    
+    func removeLoadingView(){
+        for item in view.subviews {
+            if item.isKind(of: LoadingView.self) {
+                UIView.transition(with: view, duration: 1, options: [.transitionCrossDissolve], animations: {
+                  item.removeFromSuperview()
+                }, completion: nil)
+            }
+        }
+    }
+    
+    func viewSetUp(){
         restaurantTableView.dataSource = self
         restaurantTableView.delegate = self
         view.backgroundColor = .white
@@ -31,8 +87,24 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         restaurantImages.contentMode = .scaleToFill
         restaurantName.text = restaurant.name
         restaurantRate.text = String(restaurant.rating)
-        
-        fetchFood()
+    }
+    
+    func setLikedButton(){
+        // set favorite btn
+        if(UserDefaults.standard.object(forKey: "Favorite_\(restaurant.id)") != nil){
+            favoriteBtn.setTitle(" Liked", for: .normal)
+            favoriteBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }else{
+            favoriteBtn.setTitle(" Like", for: .normal)
+            favoriteBtn.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
+        favoriteBtn.setTitleColor(.black, for: .normal)
+        favoriteBtn.tintColor = .red
+        favoriteBtn.backgroundColor = .white
+        let favoriteButtonFrame = CGRect(x: 285, y: 293, width: 100, height: 31)
+        favoriteBtn.frame = favoriteButtonFrame
+        favoriteBtn.layer.cornerRadius = 10
+        favoriteBtn.layer.masksToBounds = true
     }
     
     func fetchFood(){
@@ -41,23 +113,25 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         let data = try! Data(contentsOf: url!)
         foods = try! JSONDecoder().decode(foodAPIData.self,from:data)
     }
-    
+}
+
+extension DetailViewController:UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return foods!.message.count//菜单长度
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
         cell.textLabel!.text = foods?.message[indexPath.row].name
         cell.detailTextLabel!.text = "\(foods?.message[indexPath.row].price ?? 0.0) $"
         return cell
     }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
-    
-    
+    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //        <#code#>
+    //    }
 }
+
+
 
 
 

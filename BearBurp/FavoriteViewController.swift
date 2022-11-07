@@ -9,10 +9,12 @@ import UIKit
 
 class FavoriteViewController: UIViewController {
     
-    var likedList: [Movie] = []
+    var likedList: [Restaurant] = []
     let defaults = UserDefaults.standard
-    var myUserName = "Guest"
     var myAvatar: UIImage?
+    var theUrl:String = ""
+//    var myUserName = "Guest"
+//    var myAvatar: UIImage?
     
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userAvatar: UIImageView!
@@ -29,12 +31,12 @@ class FavoriteViewController: UIViewController {
         userBack.backgroundColor = UIColor(red: 0.92, green: 0.92, blue: 0.88, alpha: 1.00)
     }
     override func viewWillAppear(_ animated: Bool) {
-        var tempList: [Movie] = []
-        for i in UserDefaults.standard.dictionaryRepresentation().keys{
-            if i.contains("Movie_") {
+        var tempList: [Restaurant] = []
+        for i in defaults.dictionaryRepresentation().keys{
+            if i.contains("Favorite_") {
                 if let temp = defaults.object(forKey: i) as? Data {
                     let decoder = JSONDecoder()
-                    if let loadedTemp = try? decoder.decode(Movie.self, from: temp) {
+                    if let loadedTemp = try? decoder.decode(Restaurant.self, from: temp) {
                         tempList.append(loadedTemp)
                     }
                 }
@@ -45,10 +47,10 @@ class FavoriteViewController: UIViewController {
         }
         tableView.reloadData()
         setupUserAvatar()
-        if(UserDefaults.standard.string(forKey: "myName")==nil){
-        }else{
-            connectBtn.setTitle("Update Profile", for: .normal)
-        }
+//        if(UserDefaults.standard.string(forKey: "myName")==nil){
+//        }else{
+//            connectBtn.setTitle("Update Profile", for: .normal)
+//        }
             
     }
     
@@ -90,35 +92,34 @@ extension FavoriteViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         if(indexPath.item==0){
-            cell.textLabel!.text = "@Movie data retrieved from TMDb"
+            cell.textLabel!.text = "@BearBurp All Rights Reserved"
             cell.textLabel!.font =  UIFont.italicSystemFont(ofSize: 12)
             cell.isUserInteractionEnabled = false
         }else{
-//            cell.textLabel!.text = likedList[indexPath.item-1].title
-//            cell.textLabel!.font = UIFont.boldSystemFont(ofSize: 18.0)
-//
-//            let tempString = likedList[indexPath.item-1].subtitle
-//            let reStr = tempString!.replacingOccurrences(of: "\n", with: "/ ")
-//            cell.detailTextLabel?.text = reStr
-//
-//            let newImageData = Data(base64Encoded: likedList[indexPath.item-1].poster)
-//            let newImage = UIImage(data: newImageData!)
-//            cell.imageView?.image = newImage
+            cell.textLabel!.text = likedList[indexPath.item-1].name
+            cell.textLabel!.font = UIFont.boldSystemFont(ofSize: 18.0)
+
+            let tempString = likedList[indexPath.item-1].location
+            cell.detailTextLabel?.text = tempString
+
+            let image_url = likedList[indexPath.item-1].image_url
+            let url = URL(string: image_url)
+            let data = try! Data(contentsOf: url!)
+            let image = UIImage(data: data)
+            cell.imageView?.image = image
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailedVC = DetailViewController()
-//        detailedVC.imageName = likedList[indexPath.item-1].title
-//        let newImageData = Data(base64Encoded: likedList[indexPath.item-1].poster)
-//        let newImage = UIImage(data: newImageData!)
-//        detailedVC.image = newImage!
-//        detailedVC.subtitle = likedList[indexPath.item-1].subtitle!
-//        detailedVC.overview = likedList[indexPath.item-1].overview
-//        detailedVC.rating = likedList[indexPath.item-1].vote_average
-//        detailedVC.id = likedList[indexPath.item-1].id
-        navigationController!.pushViewController(detailedVC, animated: true)
+        let detailedCV = self.storyboard?.instantiateViewController(withIdentifier: "detail") as! DetailViewController
+        let image_url = likedList[indexPath.item-1].image_url
+        let url = URL(string: image_url)
+        let data = try! Data(contentsOf: url!)
+        let image = UIImage(data: data)
+        detailedCV.image = image
+        detailedCV.restaurant = likedList[indexPath.item-1]
+        navigationController?.pushViewController(detailedCV, animated: true)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -137,7 +138,7 @@ extension FavoriteViewController: UITableViewDelegate,UITableViewDataSource {
         if editingStyle == .delete{
             if tableView.numberOfRows(inSection: indexPath.section) == 1{}else{
                 if(indexPath.item==0){}else{
-                    let key = "Movie_\(likedList[indexPath.item-1].id)"
+                    let key = "Favorite_\(likedList[indexPath.item-1].id)"
                     likedList.remove(at: indexPath.item-1)
                     tableView.deleteRows(at: [indexPath], with: .fade)
                     defaults.removeObject(forKey: key)

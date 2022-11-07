@@ -78,17 +78,6 @@ class ViewController: UIViewController{
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "mycell")
     }
     
-//    func getGenre(){
-//        var url:URL?
-//        url = URL(string:"https://api.themoviedb.org/3/genre/movie/list?api_key=\(apiKey)")
-//
-//        let data = try! Data(contentsOf: url!)
-//        theGenre = try! JSONDecoder().decode(GenreBackData.self,from:data)
-//        for i in (theGenre?.genres)!{
-//            genreDict[i.id] = i.name
-//        }
-//    }
-    
     // Jiarong 11-06 update
     func getDataFromTMDB(query: String){
         var url:URL?

@@ -38,7 +38,7 @@ struct reviewAPIData:Decodable {
     let message: [Review]
 }
 
-struct Restaurant:Decodable{
+struct Restaurant:Decodable,Encodable{
     let id : Int
     let name : String
     let rating : Float
@@ -61,5 +61,11 @@ struct Review:Decodable {
     let title:String
     let content:String
     let rating:Float
+}
+
+struct User:Decodable{
+    let id: Int
+    let username: String
+    let password: String
 }
 

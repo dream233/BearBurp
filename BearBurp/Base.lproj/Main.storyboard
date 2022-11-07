@@ -161,11 +161,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeQ-NA-phE">
+                                <rect key="frame" x="292" y="293" width="67" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Button"/>
+                                <connections>
+                                    <action selector="favoriteBtnClicked:" destination="y5P-t6-9me" eventType="touchUpInside" id="gOu-aG-ORN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0kt-4G-eTN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="favoriteBtn" destination="BeQ-NA-phE" id="kO4-dT-MN3"/>
                         <outlet property="restaurantImages" destination="G2m-xS-4El" id="WYb-d2-gvl"/>
                         <outlet property="restaurantName" destination="kQQ-DO-agE" id="3aC-wF-mA4"/>
                         <outlet property="restaurantRate" destination="VLO-yU-Ysd" id="rOJ-rG-GaX"/>
