@@ -686,7 +686,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RTF5TJVD55;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BearBurp/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera Needed For AR View";
@@ -720,7 +720,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RTF5TJVD55;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BearBurp/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera Needed For AR View";

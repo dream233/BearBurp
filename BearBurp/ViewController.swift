@@ -9,30 +9,8 @@ import UIKit
 
 class ViewController: UIViewController{
     
-    struct APIResults:Decodable {
-        let page: Int
-        let total_results: Int
-        let total_pages: Int
-        let results: [Movie]
-    }
-    struct Movie: Decodable {
-        let id: Int!
-        let poster_path: String?
-        let title: String
-        let release_date: String?
-        let vote_average: Double
-        let overview: String
-        let vote_count:Int!
-        let genre_ids: [Int]
-    }
-    struct GenreBackData: Decodable {
-        let genres: [Genre]
-    }
-    
-    struct Genre: Decodable {
-        let id: Int
-        let name: String
-    }
+//    var theRestaurant : [Restaurant] = []
+//    var theAPIData : APIData?
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -42,11 +20,11 @@ class ViewController: UIViewController{
         return imageView
     }()
 //
-    var theData : APIResults?
+    var theData : APIData?
     var theImageCache : [UIImage] = []
-    var theGenre : GenreBackData?
-    var genreDict: [Int: String] = [:]
-    let apiKey = "d766a2eea4ccdbb5593aea0eafa7fb55"
+//    var theGenre : GenreBackData?
+//    var genreDict: [Int: String] = [:]
+//    let apiKey = "d766a2eea4ccdbb5593aea0eafa7fb55"
 //    let defaults = UserDefaults.standard
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -65,7 +43,7 @@ class ViewController: UIViewController{
         DispatchQueue.global(qos: .userInitiated).async {
 //            self.createDatabase()
             self.getDataFromTMDB(query: "")
-            self.getGenre()
+//            self.getGenre()
             self.cacheImages()
             
             DispatchQueue.main.async {
@@ -74,11 +52,6 @@ class ViewController: UIViewController{
             }
         }
     }
-    
-//    private func createDatabase(){
-//        let database = SQLiteDatabase.sharedInstance
-//        database.createTable()
-//    }
     
     func addLoadingView(){
         let loadingView: LoadingView = LoadingView(frame: CGRect(x: view.frame.size.width/2-50, y: view.frame.size.height/2-50, width: 100, height: 100))
@@ -105,17 +78,18 @@ class ViewController: UIViewController{
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "mycell")
     }
     
-    func getGenre(){
-        var url:URL?
-        url = URL(string:"https://api.themoviedb.org/3/genre/movie/list?api_key=\(apiKey)")
-        
-        let data = try! Data(contentsOf: url!)
-        theGenre = try! JSONDecoder().decode(GenreBackData.self,from:data)
-        for i in (theGenre?.genres)!{
-            genreDict[i.id] = i.name
-        }
-    }
+//    func getGenre(){
+//        var url:URL?
+//        url = URL(string:"https://api.themoviedb.org/3/genre/movie/list?api_key=\(apiKey)")
+//
+//        let data = try! Data(contentsOf: url!)
+//        theGenre = try! JSONDecoder().decode(GenreBackData.self,from:data)
+//        for i in (theGenre?.genres)!{
+//            genreDict[i.id] = i.name
+//        }
+//    }
     
+    // Jiarong 11-06 update
     func getDataFromTMDB(query: String){
         var url:URL?
         
@@ -124,25 +98,21 @@ class ViewController: UIViewController{
             .filter { !$0.properties.isEmojiPresentation }
             .reduce("") { $0 + String($1) }
         
-        if(myQuery.count==0){
-            url = URL(string:"https://api.themoviedb.org/3/movie/popular?api_key=\(apiKey)&language=en-US&page=1")
-        }else{
-            url = URL(string:"https://api.themoviedb.org/3/search/movie?api_key=\(apiKey)&language=en-US&query=\(myQuery)")
-        }
-        do{
-            let data = try Data(contentsOf: url!)
-            theData = try JSONDecoder().decode(APIResults.self,from:data)
-        }catch{}
-
+        // fetch data from mysql
+        url = URL(string: "http://3.83.69.24/~Charles/CSE438-final/fetchdata.php?&query=\(myQuery)")
+        let data = try! Data(contentsOf: url!)
+        theData = try! JSONDecoder().decode(APIData.self,from:data)
+        
     }
     
+    // Jiarong 11-06 update
     func cacheImages(){
         theImageCache = []
-        for item in theData?.results ?? [] {
-            if(item.poster_path==nil){
+        for item in theData?.message ?? [] {
+            if(item.image_url==""){
                 theImageCache.append(UIImage(named: "empty")!)
             }else{
-                let url = URL(string: "https://image.tmdb.org/t/p/original\( item.poster_path ?? "0")")
+                let url = URL(string: item.image_url)
                 do{
                     let data = try Data(contentsOf: url!)
                     let image = UIImage(data: data)
@@ -186,19 +156,21 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate,U
         return theImageCache.count
     }
     
+    // Jiarong 11-06 update
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycell", for: indexPath)
+//        cell.backgroundColor = .black
         
-        let imageview:UIImageView=UIImageView(frame: CGRect(x: 0, y: 0, width: (view.frame.size.width/3)-3, height: (view.frame.size.width/3*1.2)));
+        let imageview:UIImageView=UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width-3, height: 120));
         imageview.image = theImageCache[indexPath.item]
         
-        let title = UILabel(frame: CGRect(x: 0, y: 155, width: (view.frame.size.width/3)-3, height: (view.frame.size.width/3*0.15)))
-        title.text = theData?.results[indexPath.item].title
+        let title = UILabel(frame: CGRect(x: 0, y: 120, width: view.frame.size.width/2 - 3, height: 30))
+        title.text = theData?.message[indexPath.item].name
         title.font = UIFont(name: "Futura", size: CGFloat(14))
         imageview.addSubview(title)
         
-        let rate = UILabel(frame: CGRect(x: 0, y: 172, width: (view.frame.size.width/3)-3, height: (view.frame.size.width/3*0.15)))
-        let vote = theData?.results[indexPath.item].vote_average ?? 0.0
+        let rate = UILabel(frame: CGRect(x: 0, y: 150, width: view.frame.size.width/2 - 3, height: 30))
+        let vote = theData?.message[indexPath.item].rating ?? 0.0
         let rateString = "Vote Average: \(vote)"
         let mString = NSMutableAttributedString(string: rateString)
         if(vote>=7.5){
@@ -229,8 +201,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate,U
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(
-            width: (view.frame.size.width/3)-3,
-            height: (view.frame.size.width/3*1.5)
+            width: view.frame.size.width-3,
+            height: view.frame.size.width/3
         )
     }
     
@@ -238,8 +210,9 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate,U
         return 1
     }
     
+    // spacing between rows
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 30
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -249,7 +222,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate,U
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         let detailedCV = self.storyboard?.instantiateViewController(withIdentifier: "detail") as! DetailViewController
-        detailedCV.name = "TestName"
+        detailedCV.image = theImageCache[indexPath.row]
+        detailedCV.restaurant = theData?.message[indexPath.row]
         navigationController?.pushViewController(detailedCV, animated: true)
     }
     

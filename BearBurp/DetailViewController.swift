@@ -7,26 +7,56 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
-    var name = "namePlaceholder"
+    var restaurant : Restaurant!
+    var image : UIImage!
+    var foods : foodAPIData?
+    
+    @IBOutlet weak var restaurantTableView: UITableView!
+    @IBOutlet weak var restaurantRate: UILabel!
     @IBOutlet weak var restaurantName: UILabel!
     @IBOutlet weak var restaurantImages: UIImageView!
     @IBAction func reviewClicked(_ sender: Any) {
         let reviewVC = self.storyboard?.instantiateViewController(withIdentifier: "review") as! ReviewViewController
-        reviewVC.name = name
+        reviewVC.name = restaurant.name
         navigationController?.pushViewController(reviewVC, animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        restaurantTableView.dataSource = self
+        restaurantTableView.delegate = self
         view.backgroundColor = .white
-        restaurantImages.image = UIImage(named: "test")
+        restaurantImages.image = image
         restaurantImages.contentMode = .scaleToFill
-        restaurantName.text = name
+        restaurantName.text = restaurant.name
+        restaurantRate.text = String(restaurant.rating)
+        
+        fetchFood()
+    }
+    
+    func fetchFood(){
+        var url:URL?
+        url = URL(string: "http://3.83.69.24/~Charles/CSE438-final/fetchfood.php?&rid=\(restaurant.id)")
+        let data = try! Data(contentsOf: url!)
+        foods = try! JSONDecoder().decode(foodAPIData.self,from:data)
+//        print(foods?.message)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return foods!.message.count//菜单长度
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        cell.textLabel!.text = foods?.message[indexPath.row].name
+        return cell
     }
     
     
 }
+
+
 
 
 

@@ -22,3 +22,29 @@ struct Movie: Decodable {
     let overview: String
     let vote_count:Int!
 }
+
+struct APIData:Decodable {
+    let success: Bool
+    let message: [Restaurant]
+}
+
+struct foodAPIData:Decodable {
+    let success: Bool
+    let message: [Food]
+}
+
+struct Restaurant:Decodable{
+    let id : Int
+    let name : String
+    let rating : Float
+    let location : String
+    let image_url : String
+}
+
+struct Food:Decodable{
+    let id: Int
+    let rid:Int
+    let name:String
+    let rating:Float
+    let price:Float
+}
