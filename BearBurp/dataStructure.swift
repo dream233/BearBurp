@@ -63,3 +63,8 @@ struct Review:Decodable {
     let rating:Float
 }
 
+struct User:Decodable {
+    let id: Int
+    let username:String
+    let password:String
+}
