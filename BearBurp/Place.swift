@@ -25,37 +25,39 @@ import CoreLocation
 import HDAugmentedReality
 
 class Place: ARAnnotation {
-  let reference: String
-  let placeName: String
-  let address: String
-  var phoneNumber: String?
-  var website: String?
+    let reference: String
+    let placeName: String
+    let address: String
+    let rateNum: Float
+    var phoneNumber: String?
+    var website: String?
   
-  var infoText: String {
-    get {
-      var info = "Address: \(address)"
-      
-      if phoneNumber != nil {
-        info += "\nPhone: \(phoneNumber!)"
-      }
-      
-      if website != nil {
-        info += "\nweb: \(website!)"
-      }
-      return info
+    var infoText: String {
+        get {
+          var info = "Address: \(address)"
+          
+          if phoneNumber != nil {
+            info += "\nPhone: \(phoneNumber!)"
+          }
+          
+          if website != nil {
+            info += "\nweb: \(website!)"
+          }
+          return info
+        }
     }
-  }
   
-  init(location: CLLocation, reference: String, name: String, address: String) {
-      placeName = name
-      self.reference = reference
-      self.address = address
-    
-      super.init(identifier: "", title: placeName, location: location)!
-  }
+    init(location: CLLocation, rate: Float, name: String, address: String) {
+        placeName = name
+        rateNum = rate
+        self.reference = ""
+        self.address = address
+
+        super.init(identifier: "", title: placeName, location: location)!
+    }
   
-  override var description: String {
-    return placeName
-  }
+    override var description: String {
+        return placeName
+    }
 }
 

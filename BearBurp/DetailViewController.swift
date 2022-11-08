@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import HDAugmentedReality
+import CoreLocation
 
 class DetailViewController: UIViewController{
     
@@ -13,11 +15,24 @@ class DetailViewController: UIViewController{
     var image : UIImage!
     var foods : foodAPIData?
     let defaults = UserDefaults.standard
+    fileprivate var arViewController: ARViewController!
     
     @IBOutlet weak var restaurantTableView: UITableView!
     @IBOutlet weak var restaurantRate: UILabel!
     @IBOutlet weak var restaurantName: UILabel!
     @IBOutlet weak var favoriteBtn: UIButton!
+    @IBAction func directionARView(_ sender: Any) {
+        arViewController = ARViewController()
+        arViewController.dataSource = self
+        let lat = CLLocationDegrees(38.64983848424796)
+        let lon = CLLocationDegrees(-90.3108174606938)
+        let name = restaurant.name
+        let loc = CLLocation(latitude: lat, longitude: lon)
+        let place = Place(location: loc, rate: restaurant.rating, name: name, address: "")
+        arViewController.setAnnotations([place])
+            
+        self.present(arViewController, animated: true, completion: nil)
+    }
     @IBAction func favoriteBtnClicked(_ sender: Any) {
         if(defaults.object(forKey: "Favorite_\(restaurant.id)") == nil){
             
@@ -129,6 +144,24 @@ extension DetailViewController:UITableViewDataSource, UITableViewDelegate{
     //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     //        <#code#>
     //    }
+}
+
+extension DetailViewController: ARDataSource {
+  func ar(_ arViewController: ARViewController, viewForAnnotation: ARAnnotation) -> ARAnnotationView {
+      let annotationView = AnnotationView()
+      annotationView.annotation = viewForAnnotation
+      annotationView.delegate = self
+      annotationView.backgroundColor = .clear
+      annotationView.layer.cornerRadius = 10
+      annotationView.layer.borderWidth = 1
+      annotationView.layer.borderColor = UIColor(named: "black")?.cgColor
+      annotationView.frame = CGRect(x: 0, y: 0, width: 200, height: 55)
+      return annotationView
+  }
+}
+extension DetailViewController: AnnotationViewDelegate {
+  func didTouch(annotationView: AnnotationView) {
+  }
 }
 
 

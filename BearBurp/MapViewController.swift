@@ -14,18 +14,18 @@ class MapViewController: UIViewController{
     fileprivate var arViewController: ARViewController!
 
     @IBAction func arClicked(_ sender: Any) {
-        arViewController = ARViewController()
-        //1
-        arViewController.dataSource = self
+//        arViewController = ARViewController()
+//        //1
+//        arViewController.dataSource = self
         //2
 //        arViewController.maxVisibleAnnotations = 30
 //        arViewController.headingSmoothingFactor = 0.05
         //3
-        let loc = CLLocation(latitude: 38.64983848424796, longitude: -90.3108174606938)
-        let place = Place(location: loc, reference: "", name: "Knight Hall", address: "")
-        arViewController.setAnnotations([place])
-            
-        self.present(arViewController, animated: true, completion: nil)
+//        let loc = CLLocation(latitude: 38.64983848424796, longitude: -90.3108174606938)
+//        let place = Place(location: loc, rate: "", name: "Knight Hall", address: "")
+//        arViewController.setAnnotations([place])
+//
+//        self.present(arViewController, animated: true, completion: nil)
 
     }
     
@@ -69,19 +69,22 @@ class MapViewController: UIViewController{
 //
 //}
 
-extension MapViewController: ARDataSource {
-  func ar(_ arViewController: ARViewController, viewForAnnotation: ARAnnotation) -> ARAnnotationView {
-    let annotationView = AnnotationView()
-    annotationView.annotation = viewForAnnotation
-    annotationView.delegate = self
-    annotationView.frame = CGRect(x: 0, y: 0, width: 150, height: 50)
-    
-    return annotationView
-  }
-}
-extension MapViewController: AnnotationViewDelegate {
-  func didTouch(annotationView: AnnotationView) {
-      print("Tapped view for POI: \(annotationView.titleLabel?.text ?? "")")
-  }
-}
+//extension MapViewController: ARDataSource {
+//  func ar(_ arViewController: ARViewController, viewForAnnotation: ARAnnotation) -> ARAnnotationView {
+//      let annotationView = AnnotationView()
+//      annotationView.annotation = viewForAnnotation
+//      annotationView.delegate = self
+//      annotationView.backgroundColor = .white
+//      annotationView.layer.cornerRadius = 10
+//      annotationView.layer.borderWidth = 1
+//      annotationView.layer.borderColor = UIColor(named: "black")?.cgColor
+//      annotationView.frame = CGRect(x: 0, y: 0, width: 150, height: 50)
+//      return annotationView
+//  }
+//}
+//extension MapViewController: AnnotationViewDelegate {
+//    func didTouch(annotationView: AnnotationView) {
+//
+//    }
+//}
 
