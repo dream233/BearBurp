@@ -124,7 +124,7 @@ class DetailViewController: UIViewController{
     
     func fetchFood(){
         var url:URL?
-        url = URL(string: "http://3.83.69.24/~Charles/CSE438-final/fetchfood.php?&rid=\(restaurant.id)")
+        url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/fetchfood.php?&rid=\(restaurant.id)")
         let data = try! Data(contentsOf: url!)
         foods = try! JSONDecoder().decode(foodAPIData.self,from:data)
     }

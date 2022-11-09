@@ -88,10 +88,10 @@ class ViewController: UIViewController{
             .reduce("") { $0 + String($1) }
         
         // fetch data from mysql
-        url = URL(string: "http://3.83.69.24/~Charles/CSE438-final/fetchdata.php?&query=\(myQuery)")
+        url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/fetchdata.php?&query=\(myQuery)")
         let data = try! Data(contentsOf: url!)
         theData = try! JSONDecoder().decode(APIData.self,from:data)
-        
+//        print(theData)
     }
     
     // Jiarong 11-06 update
