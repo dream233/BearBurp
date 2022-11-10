@@ -19,31 +19,57 @@ class ViewController: UIViewController{
 
         return imageView
     }()
-//
-    var theData : APIData?
+
+    var theData : restaurantAPIData?
     var theImageCache : [UIImage] = []
-//    var theGenre : GenreBackData?
-//    var genreDict: [Int: String] = [:]
-//    let apiKey = "d766a2eea4ccdbb5593aea0eafa7fb55"
-//    let defaults = UserDefaults.standard
+    let defaults = UserDefaults.standard
+    var sortData : restaurantAPIData?
+    var isSort : Bool?
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
     // Creative Portion 2: Users can sort the movies (by "Release date" or by "Rating")
     @IBAction func sortButton(_ sender: UIButton) {
+        sender.showsMenuAsPrimaryAction = true
+        sender.menu = UIMenu(children: [
+            
+            // may can add "distance"
+//                UIAction(title: "Release date", handler: { action in
+//                    if(!self.movies.isEmpty){
+//                        self.movies.sort(by: {$0.release_date! > $1.release_date!})
+//                    }
+//                    self.imageCache = []
+//                    self.cacheImages()
+//                    self.collectionView.reloadData()
+//                }),
+                UIAction(title: "Rating", handler: { action in
+                    if(self.isSort == true){
+                        self.theData = self.sortData
+                        self.isSort = false
+                    }else{
+                        if(!(self.theData?.message.isEmpty)!){
+                            self.theData?.message.sort(by: {$0.rating > $1.rating})
+                        }
+                        self.isSort = true
+                    }
+                    
+                    self.theImageCache = []
+                    self.cacheImages()
+                    self.collectionView.reloadData()
+                })
+            ])
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Movies"
+        self.title = "BearBurp"
         searchBar.delegate = self
         setupCollectionView()
         addLoadingView()
         DispatchQueue.global(qos: .userInitiated).async {
-//            self.createDatabase()
-            self.getDataFromTMDB(query: "")
-//            self.getGenre()
+            self.getDataFromMysql(query: "")
             self.cacheImages()
             
             DispatchQueue.main.async {
@@ -79,7 +105,7 @@ class ViewController: UIViewController{
     }
     
     // Jiarong 11-06 update
-    func getDataFromTMDB(query: String){
+    func getDataFromMysql(query: String){
         var url:URL?
         
         var myQuery = query.removeSpecialCharacters().condensedWhitespace
@@ -90,7 +116,11 @@ class ViewController: UIViewController{
         // fetch data from mysql
         url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/fetchdata.php?&query=\(myQuery)")
         let data = try! Data(contentsOf: url!)
-        theData = try! JSONDecoder().decode(APIData.self,from:data)
+        theData = try! JSONDecoder().decode(restaurantAPIData.self,from:data)
+        
+        // for sort button
+        sortData = theData
+        isSort = false
     }
     
     // Jiarong 11-06 update
@@ -112,6 +142,8 @@ class ViewController: UIViewController{
             }
         }
     }
+    
+    
 
 }
 
@@ -124,7 +156,7 @@ extension ViewController: UISearchBarDelegate{
         let query = searchBar.text
         addLoadingView()
         DispatchQueue.global(qos: .userInitiated).async {
-            self.getDataFromTMDB(query: query ?? "")
+            self.getDataFromMysql(query: query ?? "")
             self.cacheImages()
             
             DispatchQueue.main.async {
@@ -213,6 +245,27 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate,U
         detailedCV.image = theImageCache[indexPath.row]
         detailedCV.restaurant = theData?.message[indexPath.row]
         navigationController?.pushViewController(detailedCV, animated: true)
+    }
+    
+    // Implement a Context Menu
+    func collectionView(_ collectionView: UICollectionView,contextMenuConfigurationForItemAt indexPath: IndexPath,point: CGPoint) -> UIContextMenuConfiguration? {
+            return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ -> UIMenu? in
+                return self.makeContextMenu(for:(self.theData?.message[indexPath.row])!)
+        }
+    }
+    
+    func makeContextMenu(for restaurant:Restaurant) -> UIMenu {
+
+        // Create a UIAction for favoriting
+        let favorite = UIAction(title: "Favorite", image: UIImage(systemName: "star")) { action in
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(restaurant) {
+                self.defaults.set(encoded, forKey: "Favorite_\(restaurant.id)")
+            }
+        }
+        
+        // Create and return a UIMenu with the favorite action
+        return UIMenu(title: "", children: [favorite])
     }
     
 }

@@ -7,13 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B184AF6290F3685001395A7 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B184AEB290F3684001395A7 /* FMDatabaseAdditions.m */; };
-		1B184AF7290F3685001395A7 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B184AED290F3684001395A7 /* FMDatabase.m */; };
-		1B184AF8290F3685001395A7 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B184AEF290F3684001395A7 /* FMResultSet.m */; };
-		1B184AF9290F3685001395A7 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B184AF3290F3685001395A7 /* FMDatabasePool.m */; };
-		1B184AFA290F3685001395A7 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B184AF5290F3685001395A7 /* FMDatabaseQueue.m */; };
 		1B184AFD290F3771001395A7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B184AFC290F3771001395A7 /* libsqlite3.tbd */; };
-		1B184B03290F57BC001395A7 /* favorites.db in Resources */ = {isa = PBXBuildFile; fileRef = 1B184B02290F559F001395A7 /* favorites.db */; };
 		1B184B052910915E001395A7 /* webViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B184B042910915E001395A7 /* webViewController.swift */; };
 		1B184B072910B082001395A7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1B184B062910B082001395A7 /* README.md */; };
 		1B72A4B6290CE2BB00E2F244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4B5290CE2BB00E2F244 /* AppDelegate.swift */; };
@@ -59,20 +53,7 @@
 
 /* Begin PBXFileReference section */
 		14583FD15449B2609EA53A64 /* Pods-BearBurp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearBurp.release.xcconfig"; path = "Target Support Files/Pods-BearBurp/Pods-BearBurp.release.xcconfig"; sourceTree = "<group>"; };
-		1B184AEA290F3683001395A7 /* JiarongLiang-Lab4-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JiarongLiang-Lab4-Bridging-Header.h"; sourceTree = "<group>"; };
-		1B184AEB290F3684001395A7 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		1B184AEC290F3684001395A7 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
-		1B184AED290F3684001395A7 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
-		1B184AEE290F3684001395A7 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
-		1B184AEF290F3684001395A7 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		1B184AF0290F3684001395A7 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		1B184AF1290F3684001395A7 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
-		1B184AF2290F3684001395A7 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
-		1B184AF3290F3685001395A7 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
-		1B184AF4290F3685001395A7 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
-		1B184AF5290F3685001395A7 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
 		1B184AFC290F3771001395A7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		1B184B02290F559F001395A7 /* favorites.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = favorites.db; sourceTree = "<group>"; };
 		1B184B042910915E001395A7 /* webViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webViewController.swift; sourceTree = "<group>"; };
 		1B184B062910B082001395A7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1B72A4B2290CE2BB00E2F244 /* BearBurp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BearBurp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,22 +133,10 @@
 			isa = PBXGroup;
 			children = (
 				1B184B062910B082001395A7 /* README.md */,
-				1B184AEC290F3684001395A7 /* FMDatabase.h */,
-				1B184AED290F3684001395A7 /* FMDatabase.m */,
-				1B184AF0290F3684001395A7 /* FMDatabaseAdditions.h */,
-				1B184AEB290F3684001395A7 /* FMDatabaseAdditions.m */,
-				1B184AF4290F3685001395A7 /* FMDatabasePool.h */,
-				1B184AF3290F3685001395A7 /* FMDatabasePool.m */,
-				1B184AF1290F3684001395A7 /* FMDatabaseQueue.h */,
-				1B184AF5290F3685001395A7 /* FMDatabaseQueue.m */,
-				1B184AEE290F3684001395A7 /* FMDB.h */,
-				1B184AF2290F3684001395A7 /* FMResultSet.h */,
-				1B184AEF290F3684001395A7 /* FMResultSet.m */,
 				1B72A4B4290CE2BB00E2F244 /* BearBurp */,
 				1B72A4CB290CE2BE00E2F244 /* BearBurpTests */,
 				1B72A4D5290CE2BE00E2F244 /* BearBurpUITests */,
 				1B72A4B3290CE2BB00E2F244 /* Products */,
-				1B184AEA290F3683001395A7 /* JiarongLiang-Lab4-Bridging-Header.h */,
 				1B184AFB290F3771001395A7 /* Frameworks */,
 				76ABEB5C4BE77437E4E9BCB2 /* Pods */,
 			);
@@ -186,7 +155,6 @@
 		1B72A4B4290CE2BB00E2F244 /* BearBurp */ = {
 			isa = PBXGroup;
 			children = (
-				1B184B02290F559F001395A7 /* favorites.db */,
 				1B72A4B5290CE2BB00E2F244 /* AppDelegate.swift */,
 				1B72A4B7290CE2BB00E2F244 /* SceneDelegate.swift */,
 				1B72A4B9290CE2BB00E2F244 /* ViewController.swift */,
@@ -349,7 +317,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B184B03290F57BC001395A7 /* favorites.db in Resources */,
 				1B72A4C2290CE2BD00E2F244 /* LaunchScreen.storyboard in Resources */,
 				1B184B072910B082001395A7 /* README.md in Resources */,
 				1B72A4BF290CE2BD00E2F244 /* Assets.xcassets in Resources */,
@@ -482,11 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B72A4BA290CE2BB00E2F244 /* ViewController.swift in Sources */,
-				1B184AF7290F3685001395A7 /* FMDatabase.m in Sources */,
-				1B184AF8290F3685001395A7 /* FMResultSet.m in Sources */,
-				1B184AFA290F3685001395A7 /* FMDatabaseQueue.m in Sources */,
 				6157269F2919762600268AAD /* LoginViewController.swift in Sources */,
-				1B184AF9290F3685001395A7 /* FMDatabasePool.m in Sources */,
 				1B72A4B6290CE2BB00E2F244 /* AppDelegate.swift in Sources */,
 				947C282D29146E750062521F /* MapViewController.swift in Sources */,
 				1B72A4B8290CE2BB00E2F244 /* SceneDelegate.swift in Sources */,
@@ -498,7 +461,6 @@
 				9489017429196CCC0088D78C /* FavoriteViewController.swift in Sources */,
 				94767E192912F2E000023638 /* ReviewViewController.swift in Sources */,
 				94D7AE972914A386008E1088 /* AnnotationView.swift in Sources */,
-				1B184AF6290F3685001395A7 /* FMDatabaseAdditions.m in Sources */,
 				94767E1D291301DA00023638 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -678,7 +640,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RTF5TJVD55;
+				DEVELOPMENT_TEAM = 24226NFVWT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BearBurp/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera Needed For AR View";
@@ -695,10 +657,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.2BearBurp;
+				PRODUCT_BUNDLE_IDENTIFIER = lll.BearBurp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "JiarongLiang-Lab4-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -714,7 +675,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RTF5TJVD55;
+				DEVELOPMENT_TEAM = 24226NFVWT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BearBurp/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera Needed For AR View";
@@ -731,10 +692,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.2BearBurp;
+				PRODUCT_BUNDLE_IDENTIFIER = lll.BearBurp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "JiarongLiang-Lab4-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

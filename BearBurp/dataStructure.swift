@@ -7,35 +7,19 @@
 
 import UIKit
 
-struct APIResults:Decodable {
-    let page: Int
-    let total_results: Int
-    let total_pages: Int
-    let results: [Movie]
-}
-struct Movie: Decodable {
-    let id: Int!
-    let poster_path: String?
-    let title: String
-    let release_date: String?
-    let vote_average: Double
-    let overview: String
-    let vote_count:Int!
-}
-
-struct APIData:Decodable {
+struct restaurantAPIData:Decodable {
     let success: Bool
-    let message: [Restaurant]
+    var message: [Restaurant]
 }
 
 struct foodAPIData:Decodable {
     let success: Bool
-    let message: [Food]
+    var message: [Food]
 }
 
 struct reviewAPIData:Decodable {
     let success: Bool
-    let message: [Review]
+    var message: [Review]
 }
 
 struct Restaurant:Decodable,Encodable{
