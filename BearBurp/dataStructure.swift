@@ -68,3 +68,8 @@ struct User:Decodable {
     let username:String
     let password:String
 }
+
+struct Message:Decodable {
+    let success:Bool
+    let message:String
+}

@@ -91,7 +91,6 @@ class ViewController: UIViewController{
         url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/fetchdata.php?&query=\(myQuery)")
         let data = try! Data(contentsOf: url!)
         theData = try! JSONDecoder().decode(APIData.self,from:data)
-//        print(theData)
     }
     
     // Jiarong 11-06 update
