@@ -15,6 +15,8 @@ class LoginViewController: UIViewController {
     var username:String?
     var password:String?
     var theData:Message?
+    var logoutBtn = UIButton(frame: CGRect(x: 0, y: 0 , width: 100, height: 30 ))
+    var loggedView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,9 @@ class LoginViewController: UIViewController {
                 showAlert(alertText: "Login Error", alertMessage: loginMSG)
             }else{
                 // hide login UI and show logged in UI
+                if let username = username{
+                    showLoggedUI(username: username)
+                }
             }
         }
     }
@@ -56,6 +61,44 @@ class LoginViewController: UIViewController {
                 showAlert(alertText: "Success", alertMessage: "You have registered a account, please login.")
             }
         }
+    }
+    
+    func showLoggedUI(username:String){
+        loggedView.isHidden = false
+        let screenWidth = view.frame.width;
+        let screenHeight = UIScreen.main.bounds.height;
+        loggedView = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
+        loggedView.backgroundColor = .lightGray
+        
+        // username label
+        let usernameLabel = UILabel()
+        usernameLabel.text = "You are logged in as \(username)"
+        usernameLabel.frame = CGRect(x: 0,y: screenHeight * 0.3,width: 0, height: 0 )
+        usernameLabel.sizeToFit()
+        usernameLabel.center.x = loggedView.center.x
+        loggedView.addSubview(usernameLabel)
+        
+        // log out button
+        logoutBtn.setTitle("Log Out", for: .normal)
+        logoutBtn.frame = CGRect(x: 0,y: screenHeight * 0.5,width: 0, height: 0)
+        logoutBtn.setTitleColor(.tintColor, for: .normal)
+        logoutBtn.layer.cornerRadius = 10
+        logoutBtn.backgroundColor = #colorLiteral(red: 0.8104380965, green: 0.9008539915, blue: 0.9891548753, alpha: 1)
+        logoutBtn.sizeToFit()
+        logoutBtn.frame.size.width += 35
+        logoutBtn.center.x = loggedView.center.x
+        logoutBtn.addTarget(self, action: #selector(pressLogout), for: .touchUpInside)
+        loggedView.addSubview(logoutBtn)
+        
+        view.addSubview(loggedView)
+    }
+    
+    @objc func pressLogout(){
+        showAlert(alertText: "Sucess", alertMessage: "You've logged out!")
+        loggedView.isHidden = true
+        // addtional process for logging out
+        
+        
     }
 }
 
