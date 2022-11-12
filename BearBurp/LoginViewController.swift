@@ -41,6 +41,10 @@ class LoginViewController: UIViewController {
                 // hide login UI and show logged in UI
                 if let username = username{
                     showLoggedUI(username: username)
+                    // set username to user default
+                    let defaults = UserDefaults.standard
+                    defaults.set(username, forKey: "username")
+                    // any addtional steps, potentially id or some hashing
                 }
             }
         }
@@ -97,6 +101,9 @@ class LoginViewController: UIViewController {
         loggedView.removeFromSuperview()
         showAlert(alertText: "Sucess", alertMessage: "You've logged out!")
         // any addtional process for logging out
+        let defaults = UserDefaults.standard
+        // set guest account username to nil
+        defaults.set(nil, forKey: "username")
         
     }
 }
