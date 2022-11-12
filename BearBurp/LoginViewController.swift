@@ -44,6 +44,7 @@ class LoginViewController: UIViewController {
                 }
             }
         }
+
     }
     @IBAction func click_register(_ sender: Any) {
         var url:URL?
@@ -64,7 +65,6 @@ class LoginViewController: UIViewController {
     }
     
     func showLoggedUI(username:String){
-        loggedView.isHidden = false
         let screenWidth = view.frame.width;
         let screenHeight = UIScreen.main.bounds.height;
         loggedView = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
@@ -94,10 +94,9 @@ class LoginViewController: UIViewController {
     }
     
     @objc func pressLogout(){
+        loggedView.removeFromSuperview()
         showAlert(alertText: "Sucess", alertMessage: "You've logged out!")
-        loggedView.isHidden = true
-        // addtional process for logging out
-        
+        // any addtional process for logging out
         
     }
 }
