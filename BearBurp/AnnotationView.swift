@@ -115,7 +115,7 @@ extension AnnotationView:UITableViewDataSource, UITableViewDelegate{
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
         cell.textLabel!.text = foods?.message[indexPath.row].name
         cell.detailTextLabel!.text = "\(foods?.message[indexPath.row].price ?? 0.0) $"
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 12)
         cell.textLabel?.textColor = .black
         cell.detailTextLabel?.textColor = .black

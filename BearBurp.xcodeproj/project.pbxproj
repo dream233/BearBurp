@@ -20,7 +20,6 @@
 		1B72A4D7290CE2BE00E2F244 /* JiarongLiang_Lab4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4D6290CE2BE00E2F244 /* JiarongLiang_Lab4UITests.swift */; };
 		1B72A4D9290CE2BE00E2F244 /* JiarongLiang_Lab4UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4D8290CE2BE00E2F244 /* JiarongLiang_Lab4UITestsLaunchTests.swift */; };
 		1B72A4EA290EE8AD00E2F244 /* dataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4E9290EE8AD00E2F244 /* dataStructure.swift */; };
-		256687D0E13C558F84BF0C70 /* Pods_BearBurp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B924489C656DACC1BC3DC01 /* Pods_BearBurp.framework */; };
 		6157269F2919762600268AAD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6157269E2919762600268AAD /* LoginViewController.swift */; };
 		94767E0F2912E7B200023638 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E0E2912E7B200023638 /* DetailViewController.swift */; };
 		94767E192912F2E000023638 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E182912F2E000023638 /* ReviewViewController.swift */; };
@@ -30,6 +29,7 @@
 		9489017429196CCC0088D78C /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489017329196CCC0088D78C /* FavoriteViewController.swift */; };
 		94D7AE972914A386008E1088 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7AE962914A386008E1088 /* AnnotationView.swift */; };
 		94D7AE992914A4B6008E1088 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7AE982914A4B6008E1088 /* Place.swift */; };
+		94E029A72922B8EE00DBBCB6 /* Pods_BearBurp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B924489C656DACC1BC3DC01 /* Pods_BearBurp.framework */; };
 		D1BB77673CD54AE2A17B83F1 /* Pods_BearBurpTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634F22739BB04846EFD3A2EA /* Pods_BearBurpTests.framework */; };
 		F0E55E15EB955A656289D997 /* Pods_BearBurp_BearBurpUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A51509275FD50CA05FB4A57D /* Pods_BearBurp_BearBurpUITests.framework */; };
 /* End PBXBuildFile section */
@@ -95,7 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B184AFD290F3771001395A7 /* libsqlite3.tbd in Frameworks */,
-				256687D0E13C558F84BF0C70 /* Pods_BearBurp.framework in Frameworks */,
+				94E029A72922B8EE00DBBCB6 /* Pods_BearBurp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +589,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -649,6 +650,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
