@@ -219,6 +219,7 @@
 				1B72A4AF290CE2BB00E2F244 /* Frameworks */,
 				1B72A4B0290CE2BB00E2F244 /* Resources */,
 				B5DD944A9673A82DB25289CE /* [CP] Embed Pods Frameworks */,
+				7B61B16C1E4416DE1E10F3C3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,6 +258,7 @@
 				1B72A4CF290CE2BE00E2F244 /* Frameworks */,
 				1B72A4D0290CE2BE00E2F244 /* Resources */,
 				156D94CA3DB26F33FDD16844 /* [CP] Embed Pods Frameworks */,
+				97A99493881A8CF7E360E50F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -422,6 +424,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B61B16C1E4416DE1E10F3C3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BearBurp/Pods-BearBurp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BearBurp/Pods-BearBurp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BearBurp/Pods-BearBurp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97A99493881A8CF7E360E50F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BearBurp-BearBurpUITests/Pods-BearBurp-BearBurpUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BearBurp-BearBurpUITests/Pods-BearBurp-BearBurpUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BearBurp-BearBurpUITests/Pods-BearBurp-BearBurpUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B5DD944A9673A82DB25289CE /* [CP] Embed Pods Frameworks */ = {

@@ -9,6 +9,7 @@ import UIKit
 import CoreLocation
 import MapKit
 import HDAugmentedReality
+import GoogleMaps
 
 class MapViewController: UIViewController{
     fileprivate var arViewController: ARViewController!
@@ -32,15 +33,25 @@ class MapViewController: UIViewController{
 //    fileprivate let locationManager = CLLocationManager()
 //
 //    @IBOutlet weak var mapView: MKMapView!
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
 //        locationManager.delegate = self
 //        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
 //        locationManager.startUpdatingLocation()
 //        locationManager.requestWhenInUseAuthorization()
-//
-//    }
+        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
+        let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
+        self.view.addSubview(mapView)
+
+        // Creates a marker in the center of the map.
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
+        marker.title = "Sydney"
+        marker.snippet = "Australia"
+        marker.map = mapView
+
+    }
 
     
     
