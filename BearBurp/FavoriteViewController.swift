@@ -20,9 +20,6 @@ class FavoriteViewController: UIViewController {
     @IBOutlet weak var userAvatar: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userBack: UIView!
-    @IBOutlet weak var connectBtn: UIButton!
-    @IBAction func connectBtnClicked(_ sender: Any) {
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +70,7 @@ class FavoriteViewController: UIViewController {
         userAvatar.layer.masksToBounds = true
         userAvatar.layer.borderWidth = 2;
         userAvatar.layer.borderColor = UIColor.white.cgColor
-        userName.text = UserDefaults.standard.string(forKey: "myName")
+        userName.text = UserDefaults.standard.string(forKey: "username")
     }
     
     
