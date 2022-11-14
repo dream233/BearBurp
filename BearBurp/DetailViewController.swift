@@ -158,12 +158,15 @@ extension DetailViewController: ARDataSource {
       annotationView.layer.borderWidth = 1
       annotationView.layer.borderColor = UIColor(named: "black")?.cgColor
       annotationView.frame = CGRect(x: 0, y: 0, width: 200, height: 55)
+      annotationView.restaurant = restaurant
+      annotationView.loadUI()
       return annotationView
   }
 }
 extension DetailViewController: AnnotationViewDelegate {
-  func didTouch(annotationView: AnnotationView) {
-  }
+    func didTouch(annotationView: AnnotationView) {
+        
+    }
 }
 
 

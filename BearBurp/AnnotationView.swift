@@ -14,14 +14,25 @@ protocol AnnotationViewDelegate {
 
 class AnnotationView: ARAnnotationView {
 
-  var delegate: AnnotationViewDelegate?
+    var delegate: AnnotationViewDelegate?
+    var restaurant : Restaurant!
+    var foods : foodAPIData?
+    let tableView = UITableView()
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        tableView.dataSource = self
+        tableView.delegate = self
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.fetchFood()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
   
-  override func didMoveToSuperview() {
-    super.didMoveToSuperview()
-    loadUI()
-  }
-  
-  func loadUI() {
+    func loadUI() {
+      self.frame = CGRect(x: 0, y: 0, width: 200, height: 55)
+      self.subviews.forEach({ $0.removeFromSuperview()})
       let label = UILabel(frame: CGRect(x: 10, y: 0, width: 180, height: 30))
       label.font = UIFont.boldSystemFont(ofSize: 18)
       label.numberOfLines = 0
@@ -46,12 +57,23 @@ class AnnotationView: ARAnnotationView {
       }
     }
     
-    override func layoutSubviews() {
-        
+    func loadDetailView(){
+        self.subviews.forEach({ $0.removeFromSuperview()})
+        tableView.frame = CGRect(x: 0, y: 0, width: 300, height: 295)
+        tableView.backgroundColor = .clear
+        self.addSubview(tableView)
+    }
+    
+    func fetchFood(){
+        var url:URL?
+        url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/fetchfood.php?&rid=\(restaurant.id)")
+        let data = try! Data(contentsOf: url!)
+        foods = try! JSONDecoder().decode(foodAPIData.self,from:data)
     }
       
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-      delegate?.didTouch(annotationView: self)
+        self.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        loadDetailView()
     }
 
 }
@@ -81,6 +103,30 @@ extension NSMutableAttributedString{
         }
 
         return starString
+    }
+}
+
+extension AnnotationView:UITableViewDataSource, UITableViewDelegate{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return foods!.message.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
+        cell.textLabel!.text = foods?.message[indexPath.row].name
+        cell.detailTextLabel!.text = "\(foods?.message[indexPath.row].price ?? 0.0) $"
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
+        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 12)
+        cell.textLabel?.textColor = .black
+        cell.detailTextLabel?.textColor = .black
+        cell.backgroundColor = .clear
+        let view = UIView()
+        view.backgroundColor = .clear
+        cell.selectedBackgroundView = view
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        loadUI()
     }
 }
 
