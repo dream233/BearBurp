@@ -39,9 +39,19 @@ class AnnotationView: ARAnnotationView {
       label.backgroundColor = .clear
       label.textColor = UIColor.black
       self.addSubview(label)
+        label.alpha = 0.0
+        UIView.animate(withDuration: 0.5) {
+            label.alpha = 1.0
+            self.layoutIfNeeded()
+        }
       
       let rateStar = UILabel(frame: CGRect(x: 10, y: 30, width: 180, height: 20))
       self.addSubview(rateStar)
+        rateStar.alpha = 0.0
+        UIView.animate(withDuration: 0.5) {
+            rateStar.alpha = 1.0
+            self.layoutIfNeeded()
+        }
       
       let distanceLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 180, height: 30))
       distanceLabel.backgroundColor = .clear
@@ -49,6 +59,11 @@ class AnnotationView: ARAnnotationView {
       distanceLabel.textColor = UIColor.black
       distanceLabel.font = UIFont.boldSystemFont(ofSize: 14)
       self.addSubview(distanceLabel)
+        distanceLabel.alpha = 0.0
+        UIView.animate(withDuration: 0.5) {
+            distanceLabel.alpha = 1.0
+            self.layoutIfNeeded()
+        }
       
       if let annotation = annotation as? Place {
           label.text = annotation.placeName
@@ -62,6 +77,11 @@ class AnnotationView: ARAnnotationView {
         tableView.frame = CGRect(x: 0, y: 0, width: 300, height: 295)
         tableView.backgroundColor = .clear
         self.addSubview(tableView)
+        tableView.alpha = 0.0
+        UIView.animate(withDuration: 0.5) {
+            self.tableView.alpha = 1.0
+            self.layoutIfNeeded()
+        }
     }
     
     func fetchFood(){
