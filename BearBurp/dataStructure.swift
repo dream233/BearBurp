@@ -28,6 +28,8 @@ struct Restaurant:Decodable,Encodable{
     let rating : Float
     let location : String
     let image_url : String
+    let longitude : Double
+    let latitude : Double
 }
 
 struct Food:Decodable{

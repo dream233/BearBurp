@@ -24,8 +24,10 @@ class DetailViewController: UIViewController{
     @IBAction func directionARView(_ sender: Any) {
         arViewController = ARViewController()
         arViewController.dataSource = self
-        let lat = CLLocationDegrees(38.64983848424796)
-        let lon = CLLocationDegrees(-90.3108174606938)
+        let lat = CLLocationDegrees(restaurant.latitude)
+        let lon = CLLocationDegrees(restaurant.longitude)
+//        let lat = CLLocationDegrees(38.64983848424796)
+//        let lon = CLLocationDegrees(-90.3108174606938)
         let name = restaurant.name
         let loc = CLLocation(latitude: lat, longitude: lon)
         let place = Place(location: loc, rate: restaurant.rating, name: name, address: "")
