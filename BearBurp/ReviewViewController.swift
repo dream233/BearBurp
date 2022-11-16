@@ -42,7 +42,7 @@ class ReviewViewController: UIViewController {
         
         let reviewFrame = CGRect(x: 16, y: 142, width: 358, height: 608)
         restaurantTableView.frame = reviewFrame
-        restaurantTableView.backgroundColor = .black
+//        restaurantTableView.backgroundColor = .black
         setupTableView()
         
         DispatchQueue.global(qos: .userInitiated).async {

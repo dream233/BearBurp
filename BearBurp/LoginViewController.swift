@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
     }
     @IBAction func click_login(_ sender: Any) {
         var url:URL?
+        
         username = usernameInput.text
         password = pwInput.text
         url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/login.php?username=\(username!)&password=\(password!)")
@@ -50,24 +51,29 @@ class LoginViewController: UIViewController {
     }
     @IBAction func click_register(_ sender: Any) {
         var url:URL?
-        username = usernameInput.text
-        password = pwInput.text
-        url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/signup.php?username=\(username!)&password=\(password!)")
-        let data = try! Data(contentsOf: url!)
-        theData = try! JSONDecoder().decode(Message.self,from:data)
-        
-        if let regIndicator = theData?.success, let regMSG = theData?.message {
-            if (!regIndicator){
-                showAlert(alertText: "Register Error", alertMessage: regMSG)
-            }else{
-                // jump to favoriteView
-                loginSuccessfully()
-                showLoggedUI(username: username!)
-                // set username to user default
-                let defaults = UserDefaults.standard
-                defaults.set(username, forKey: "username")
-                // any addtional steps, potentially id or some hashing
+        if(usernameInput.text != "" && pwInput.text != ""){
+            username = usernameInput.text
+            password = pwInput.text
+            url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/signup.php?username=\(username!)&password=\(password!)")
+            let data = try! Data(contentsOf: url!)
+            theData = try! JSONDecoder().decode(Message.self,from:data)
+            
+            if let regIndicator = theData?.success, let regMSG = theData?.message {
+                if (!regIndicator){
+                    showAlert(alertText: "Register Error", alertMessage: regMSG)
+                }else{
+                    // jump to favoriteView
+                    loginSuccessfully()
+                    showLoggedUI(username: username!)
+                    // set username to user default
+                    let defaults = UserDefaults.standard
+                    defaults.set(username, forKey: "username")
+                    // any addtional steps, potentially id or some hashing
+                }
             }
+        }
+        else{
+            showAlert(alertText: "Register Error", alertMessage: "Please input username or password")
         }
     }
     
