@@ -29,35 +29,17 @@ class Place: ARAnnotation {
     let placeName: String
     let address: String
     let rateNum: Float
-    var phoneNumber: String?
-    var website: String?
+    let rid: Int
   
-    var infoText: String {
-        get {
-          var info = "Address: \(address)"
-          
-          if phoneNumber != nil {
-            info += "\nPhone: \(phoneNumber!)"
-          }
-          
-          if website != nil {
-            info += "\nweb: \(website!)"
-          }
-          return info
-        }
-    }
-  
-    init(location: CLLocation, rate: Float, name: String, address: String) {
+    init(location: CLLocation, rate: Float, name: String, address: String,id: Int) {
         placeName = name
         rateNum = rate
+        rid = id
         self.reference = ""
         self.address = address
 
         super.init(identifier: "", title: placeName, location: location)!
     }
-  
-    override var description: String {
-        return placeName
-    }
+
 }
 

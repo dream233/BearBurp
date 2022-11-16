@@ -15,7 +15,7 @@ protocol AnnotationViewDelegate {
 class AnnotationView: ARAnnotationView {
 
     var delegate: AnnotationViewDelegate?
-    var restaurant : Restaurant!
+//    var restaurant : Restaurant!
     var foods : foodAPIData?
     let tableView = UITableView()
     override func didMoveToSuperview() {
@@ -86,9 +86,12 @@ class AnnotationView: ARAnnotationView {
     
     func fetchFood(){
         var url:URL?
-        url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/fetchfood.php?&rid=\(restaurant.id)")
-        let data = try! Data(contentsOf: url!)
-        foods = try! JSONDecoder().decode(foodAPIData.self,from:data)
+        if let annotation = annotation as? Place {
+            let rid = annotation.rid
+            url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/fetchfood.php?&rid=\(rid)")
+            let data = try! Data(contentsOf: url!)
+            foods = try! JSONDecoder().decode(foodAPIData.self,from:data)
+        }
     }
       
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

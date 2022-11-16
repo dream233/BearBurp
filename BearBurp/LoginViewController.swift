@@ -108,9 +108,7 @@ class LoginViewController: UIViewController {
     
     func loginSuccessfully(){
         let favoriteCV = self.storyboard?.instantiateViewController(withIdentifier: "favorite") as! FavoriteViewController
-        navigationController?.pushViewController(favoriteCV, animated: true)
-        
-        
+        self.navigationController?.setViewControllers([favoriteCV], animated: true)
     }
     
     @objc func pressLogout(){

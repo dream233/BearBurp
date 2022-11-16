@@ -28,7 +28,8 @@ class DetailViewController: UIViewController{
         let lon = CLLocationDegrees(restaurant.longitude)
         let name = restaurant.name
         let loc = CLLocation(latitude: lat, longitude: lon)
-        let place = Place(location: loc, rate: restaurant.rating, name: name, address: "")
+        let id = restaurant.id
+        let place = Place(location: loc, rate: restaurant.rating, name: name, address: "",id: id)
         arViewController.setAnnotations([place])
             
         self.present(arViewController, animated: true, completion: nil)
@@ -132,7 +133,7 @@ class DetailViewController: UIViewController{
 
 extension DetailViewController:UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foods!.message.count//菜单长度
+        return foods!.message.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -141,9 +142,6 @@ extension DetailViewController:UITableViewDataSource, UITableViewDelegate{
         cell.detailTextLabel!.text = "\(foods?.message[indexPath.row].price ?? 0.0) $"
         return cell
     }
-    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        <#code#>
-    //    }
 }
 
 extension DetailViewController: ARDataSource {
@@ -156,7 +154,7 @@ extension DetailViewController: ARDataSource {
       annotationView.layer.borderWidth = 1
       annotationView.layer.borderColor = UIColor(named: "black")?.cgColor
       annotationView.frame = CGRect(x: 0, y: 0, width: 200, height: 55)
-      annotationView.restaurant = restaurant
+//      annotationView.restaurant = restaurant
       annotationView.loadUI()
       return annotationView
   }

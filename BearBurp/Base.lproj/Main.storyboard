@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pon-fJ-JS7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pon-fJ-JS7">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -390,20 +390,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezl-KN-k83">
-                                <rect key="frame" x="150" y="177" width="103" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7c-gg-RWx">
+                                <rect key="frame" x="314" y="47" width="46" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="AR"/>
                                 <connections>
-                                    <action selector="arClicked:" destination="slV-hx-2ZD" eventType="touchUpInside" id="gj8-3H-eyq"/>
+                                    <action selector="arBtnClicked:" destination="slV-hx-2ZD" eventType="touchUpInside" id="uQF-Ow-gRN"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbj-pC-ohV">
+                                <rect key="frame" x="0.0" y="86" width="390" height="675"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dtN-mJ-29h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="k7c-gg-RWx" firstAttribute="leading" secondItem="dtN-mJ-29h" secondAttribute="leading" constant="314" id="2Il-rm-tZe"/>
+                            <constraint firstItem="dtN-mJ-29h" firstAttribute="trailing" secondItem="k7c-gg-RWx" secondAttribute="trailing" constant="30" id="39L-8e-kpL"/>
+                            <constraint firstItem="zbj-pC-ohV" firstAttribute="leading" secondItem="dtN-mJ-29h" secondAttribute="leading" id="9Qf-xH-V5U"/>
+                            <constraint firstItem="k7c-gg-RWx" firstAttribute="top" secondItem="dtN-mJ-29h" secondAttribute="top" id="YQM-gi-6Kn"/>
+                            <constraint firstItem="dtN-mJ-29h" firstAttribute="bottom" secondItem="zbj-pC-ohV" secondAttribute="bottom" id="cTm-Uv-yfL"/>
+                            <constraint firstItem="zbj-pC-ohV" firstAttribute="top" secondItem="k7c-gg-RWx" secondAttribute="bottom" constant="4" id="ibr-sy-utN"/>
+                            <constraint firstItem="zbj-pC-ohV" firstAttribute="trailing" secondItem="dtN-mJ-29h" secondAttribute="trailing" id="jVA-j9-XD4"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="Dzh-ul-ew5"/>
+                    <connections>
+                        <outlet property="mapViewContainer" destination="zbj-pC-ohV" id="TWK-Hm-NbJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVV-PS-R6o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
