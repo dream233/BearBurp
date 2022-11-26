@@ -684,9 +684,11 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera Needed For AR View";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Use location while using AR";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Use location while using AR";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Used to access the Image Gallery";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "\"\"";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -719,9 +721,11 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera Needed For AR View";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Use location while using AR";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Use location while using AR";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Used to access the Image Gallery";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "\"\"";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

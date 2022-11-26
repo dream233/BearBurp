@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import PhotosUI
+import Photos
+import SwiftUI
 
 class FavoriteViewController: UIViewController {
     
@@ -20,6 +23,7 @@ class FavoriteViewController: UIViewController {
     @IBOutlet weak var userAvatar: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userBack: UIView!
+    @IBOutlet weak var uploadButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,9 +76,25 @@ class FavoriteViewController: UIViewController {
         userAvatar.layer.borderColor = UIColor.white.cgColor
         userName.text = UserDefaults.standard.string(forKey: "username")
     }
-    
-    
+ 
+
+    @IBAction func pressUploadImg(_ sender: Any) {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+        //        var config = PHPickerConfiguration(photoLibrary:  .shared())
+//        config.selectionLimit = 2
+//        config.filter = .images
+//        let vc = PHPickerViewController(configuration: config)
+//        vc.delegate = self
+//        present(vc, animated: true)
+    }
+
 }
+
+
 
 extension FavoriteViewController: UITableViewDelegate,UITableViewDataSource {
     
@@ -140,11 +160,48 @@ extension FavoriteViewController: UITableViewDelegate,UITableViewDataSource {
                     tableView.deleteRows(at: [indexPath], with: .fade)
                     defaults.removeObject(forKey: key)
                 }
-
             }
-
         }
     }
 
-
 }
+
+extension FavoriteViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        userAvatar.image = UIImage(systemName: "circle")
+        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage{
+            self.userAvatar.image = image
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+}
+//// MARK: - PHPicker Configurations (PHPickerViewControllerDelegate)
+//extension FavoriteViewController: PHPickerViewControllerDelegate {
+//    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+//         picker.dismiss(animated: true, completion: .none)
+//        let group = DispatchGroup()
+//
+//        self.userAvatar.image = UIImage(systemName: "circle")
+//         results.forEach { result in
+//             group.enter()
+//               result.itemProvider.loadObject(ofClass: UIImage.self) { reading, error in
+//                   defer{
+//                       group.leave()
+//                   }
+//               guard let image = reading as? UIImage, error == nil else {
+//                   print("!!!!!!!!!!!! PHPicker failed")
+//                   print(error)
+//
+//                   return }
+//                   print (image)
+//          }
+//       }
+//        group.notify(queue: .main){
+//            print("sSSSSssssSS")
+//        }
+//  }
+//}
+//

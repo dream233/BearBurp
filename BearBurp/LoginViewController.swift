@@ -38,6 +38,7 @@ class LoginViewController: UIViewController {
                 // hide login UI and show logged in UI
                 if let username = username{
                     // jump to favoriteView
+                    
                     loginSuccessfully()
                     showLoggedUI(username: username)
                     // set username to user default

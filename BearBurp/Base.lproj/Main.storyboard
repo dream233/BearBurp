@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pon-fJ-JS7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pon-fJ-JS7">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -19,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UKl-CW-KXm">
-                                <rect key="frame" x="0.0" y="130" width="390" height="631"/>
+                                <rect key="frame" x="0.0" y="127" width="390" height="634"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="5L6-4c-ASw">
                                     <size key="itemSize" width="90" height="90"/>
@@ -28,7 +27,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <tableView key="backgroundView" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1Eb-op-5sn">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="631"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="634"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
@@ -45,7 +44,7 @@
                                 </cells>
                             </collectionView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Xa8-SW-DAg">
-                                <rect key="frame" x="0.0" y="86" width="390" height="44"/>
+                                <rect key="frame" x="0.0" y="83" width="390" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Cpk-Bs-kO5"/>
                                 </constraints>
@@ -97,7 +96,7 @@
                     <tabBarItem key="tabBarItem" title="Restaurant" image="magnifyingglass" catalog="system" id="2fZ-wm-fPr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jWA-SJ-SKr">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -288,7 +287,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="14I-ha-wiz">
-                                <rect key="frame" x="95" y="215" width="200" height="335"/>
+                                <rect key="frame" x="95" y="212.00000000000003" width="200" height="331.66666666666674"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGu-eZ-64e">
                                         <rect key="frame" x="60.999999999999993" y="0.0" width="78.333333333333314" height="20.333333333333332"/>
@@ -319,10 +318,10 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="iEE-J4-Z4U">
-                                        <rect key="frame" x="0.0" y="300.66666666666663" width="200" height="34.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="300.66666666666663" width="200" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntc-cw-4dq">
-                                                <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="34.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="59.333333333333336" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="tinted" title="Login"/>
                                                 <connections>
@@ -330,7 +329,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuV-Nb-8Mo">
-                                                <rect key="frame" x="113" y="0.0" width="87" height="34.333333333333336"/>
+                                                <rect key="frame" x="122.66666666666666" y="0.0" width="77.333333333333343" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="tinted" title="Register"/>
                                                 <connections>
@@ -371,7 +370,7 @@
                 <navigationController id="4eK-5e-ah8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Me" image="person" catalog="system" id="rDa-IJ-0gE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OYu-7h-LVG">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -391,7 +390,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7c-gg-RWx">
-                                <rect key="frame" x="314" y="47" width="46" height="35"/>
+                                <rect key="frame" x="314" y="44" width="46" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="AR"/>
                                 <connections>
@@ -399,7 +398,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbj-pC-ohV">
-                                <rect key="frame" x="0.0" y="86" width="390" height="675"/>
+                                <rect key="frame" x="0.0" y="79" width="390" height="682"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -451,7 +450,7 @@
                     <tabBarItem key="tabBarItem" title="Favorite" image="heart" catalog="system" id="a5Y-uh-AWs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zj3-gZ-FwS">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -488,14 +487,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xb-Hg-JKB">
-                                <rect key="frame" x="0.0" y="1" width="390" height="301"/>
+                                <rect key="frame" x="0.0" y="-2" width="390" height="304"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Io-R6-AnU">
-                                        <rect key="frame" x="137" y="83" width="120" height="173"/>
+                                        <rect key="frame" x="137" y="83" width="120" height="176"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHC-6Y-G3c">
-                                        <rect key="frame" x="10" y="260" width="370" height="33"/>
+                                        <rect key="frame" x="10" y="263" width="370" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="33" id="XPN-KE-kVd"/>
                                         </constraints>
@@ -503,16 +502,27 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lB3-Sr-vX7">
+                                        <rect key="frame" x="228" y="246" width="71" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Upload"/>
+                                        <connections>
+                                            <action selector="pressUploadImg:" destination="68P-o4-K30" eventType="touchUpInside" id="7CE-8f-rus"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="aHC-6Y-G3c" firstAttribute="leading" secondItem="1xb-Hg-JKB" secondAttribute="leading" constant="10" id="58h-H2-dnX"/>
                                     <constraint firstItem="8Io-R6-AnU" firstAttribute="top" secondItem="1xb-Hg-JKB" secondAttribute="top" constant="83" id="Exy-FM-GB4"/>
                                     <constraint firstAttribute="trailing" secondItem="8Io-R6-AnU" secondAttribute="trailing" constant="133" id="Gmo-IN-Ie9"/>
+                                    <constraint firstAttribute="bottom" secondItem="lB3-Sr-vX7" secondAttribute="bottom" constant="27" id="XqR-A8-fhN"/>
                                     <constraint firstAttribute="bottom" secondItem="aHC-6Y-G3c" secondAttribute="bottom" constant="8" id="ZC6-hO-0Qy"/>
                                     <constraint firstItem="aHC-6Y-G3c" firstAttribute="top" secondItem="8Io-R6-AnU" secondAttribute="bottom" constant="4" id="awg-t8-WAF"/>
                                     <constraint firstItem="8Io-R6-AnU" firstAttribute="leading" secondItem="1xb-Hg-JKB" secondAttribute="leading" constant="137" id="j3H-Kz-JoX"/>
                                     <constraint firstAttribute="trailing" secondItem="aHC-6Y-G3c" secondAttribute="trailing" constant="10" id="k6F-Ix-UC0"/>
+                                    <constraint firstItem="lB3-Sr-vX7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1xb-Hg-JKB" secondAttribute="leading" constant="20" symbolic="YES" id="mHP-mt-G46"/>
+                                    <constraint firstAttribute="trailing" secondItem="lB3-Sr-vX7" secondAttribute="trailing" constant="91" id="zz0-Nd-dpl"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -534,6 +544,7 @@
                     <navigationItem key="navigationItem" id="lqI-eP-58Z"/>
                     <connections>
                         <outlet property="tableView" destination="0aN-NJ-eYa" id="9Rg-Cq-mr6"/>
+                        <outlet property="uploadButton" destination="lB3-Sr-vX7" id="VF9-Ly-G4B"/>
                         <outlet property="userAvatar" destination="8Io-R6-AnU" id="j7I-sp-veH"/>
                         <outlet property="userBack" destination="1xb-Hg-JKB" id="U3M-bF-Ih7"/>
                         <outlet property="userName" destination="aHC-6Y-G3c" id="cJ8-oV-9jJ"/>
@@ -545,12 +556,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart" catalog="system" width="128" height="107"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-        <image name="map" catalog="system" width="128" height="112"/>
-        <image name="person" catalog="system" width="128" height="121"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="map" catalog="system" width="128" height="110"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
