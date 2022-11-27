@@ -503,9 +503,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lB3-Sr-vX7">
-                                        <rect key="frame" x="228" y="246" width="71" height="31"/>
+                                        <rect key="frame" x="253.66666666666666" y="246" width="45.333333333333343" height="31"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Upload"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="plus.circle" catalog="system" title=""/>
                                         <connections>
                                             <action selector="pressUploadImg:" destination="68P-o4-K30" eventType="touchUpInside" id="7CE-8f-rus"/>
                                         </connections>
@@ -560,6 +560,7 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

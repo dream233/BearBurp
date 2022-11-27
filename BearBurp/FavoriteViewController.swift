@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import PhotosUI
 import Photos
+import PhotosUI
 import SwiftUI
 
 class FavoriteViewController: UIViewController {
@@ -32,6 +32,7 @@ class FavoriteViewController: UIViewController {
         userBack.backgroundColor = UIColor(red: 0.92, green: 0.92, blue: 0.88, alpha: 1.00)
     }
     override func viewWillAppear(_ animated: Bool) {
+        setupUserAvatar()
         var tempList: [Restaurant] = []
         for i in defaults.dictionaryRepresentation().keys{
             if i.contains("Favorite_") {
@@ -63,12 +64,20 @@ class FavoriteViewController: UIViewController {
     }
     func setupUserAvatar(){
         let avatarInDefaults = UserDefaults.standard.string(forKey: "myAvatar")
-        if(avatarInDefaults==nil){
-            userAvatar.image = myAvatar
-        }else{
-            let newImageData = Data(base64Encoded: avatarInDefaults!)
-            let newImage = UIImage(data: newImageData!)
-            userAvatar.image = newImage
+//        if(avatarInDefaults==nil){
+//            userAvatar.image = myAvatar
+//        }
+        /// getting avatar from DB/default
+        if let username = UserDefaults.standard.string(forKey: "username"){
+            let key = username + "/" + "imagedata"
+            print("the key is \(key)")
+            if let imageData = UserDefaults.standard.data(forKey: key){
+                userAvatar.image = UIImage(data: imageData)
+            }else{
+                let newImageData = Data(base64Encoded: avatarInDefaults!)
+                let newImage = UIImage(data: newImageData!)
+                userAvatar.image = newImage
+            }
         }
         userAvatar.layer.cornerRadius = (userAvatar.frame.size.width)/2
         userAvatar.layer.masksToBounds = true
@@ -77,19 +86,12 @@ class FavoriteViewController: UIViewController {
         userName.text = UserDefaults.standard.string(forKey: "username")
     }
  
-
     @IBAction func pressUploadImg(_ sender: Any) {
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary
         vc.delegate = self
         vc.allowsEditing = true
         present(vc, animated: true)
-        //        var config = PHPickerConfiguration(photoLibrary:  .shared())
-//        config.selectionLimit = 2
-//        config.filter = .images
-//        let vc = PHPickerViewController(configuration: config)
-//        vc.delegate = self
-//        present(vc, animated: true)
     }
 
 }
@@ -170,7 +172,20 @@ extension FavoriteViewController: UIImagePickerControllerDelegate, UINavigationC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         userAvatar.image = UIImage(systemName: "circle")
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage{
-            self.userAvatar.image = image
+            // replace the avatar image
+            //self.userAvatar.image = image
+            // convert to imageData
+            guard let imageData = image.pngData() else { return  }
+            if let convertImage = UIImage(data: imageData){
+                
+                self.userAvatar.image = convertImage
+                
+                // Store the image data to DB/default
+                guard let username = UserDefaults.standard.string(forKey: "username") else { return}
+                let key = username + "/" + "imagedata"
+                print("the key is \(key)")
+                defaults.set(imageData, forKey: key)
+            }
         }
         picker.dismiss(animated: true, completion: nil)
     }
@@ -200,7 +215,7 @@ extension FavoriteViewController: UIImagePickerControllerDelegate, UINavigationC
 //          }
 //       }
 //        group.notify(queue: .main){
-//            print("sSSSSssssSS")
+//            print("image loop done")
 //        }
 //  }
 //}
