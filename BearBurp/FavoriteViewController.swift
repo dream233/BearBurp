@@ -63,7 +63,8 @@ class FavoriteViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     func setupUserAvatar(){
-        let avatarInDefaults = UserDefaults.standard.string(forKey: "myAvatar")
+        let avatarInDefaults = UIImage(systemName: "face.smiling")
+//        UIImage(systemName: "face.smiling")
 //        if(avatarInDefaults==nil){
 //            userAvatar.image = myAvatar
 //        }
@@ -74,9 +75,9 @@ class FavoriteViewController: UIViewController {
             if let imageData = UserDefaults.standard.data(forKey: key){
                 userAvatar.image = UIImage(data: imageData)
             }else{
-                let newImageData = Data(base64Encoded: avatarInDefaults!)
-                let newImage = UIImage(data: newImageData!)
-                userAvatar.image = newImage
+//                let newImageData = Data(base64Encoded: avatarInDefaults!)
+//                let newImage = UIImage(data: newImageData!)
+                userAvatar.image = avatarInDefaults
             }
         }
         userAvatar.layer.cornerRadius = (userAvatar.frame.size.width)/2
