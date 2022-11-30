@@ -11,10 +11,13 @@ import MapKit
 import HDAugmentedReality
 import GoogleMaps
 
-class MapViewController: UIViewController{
+class MapViewController: UIViewController, CLLocationManagerDelegate{
     fileprivate var arViewController: ARViewController!
+    @IBOutlet weak var mapViewContainer: UIView!
+    var googleMapsView:GMSMapView!
     var theData : restaurantAPIData?
     var list: [Place]? = []
+    var locationManager = CLLocationManager()
     
     
     func getDataFromMysql(){
@@ -48,19 +51,54 @@ class MapViewController: UIViewController{
 
         self.present(arViewController, animated: true, completion: nil)
     }
-    @IBOutlet weak var mapViewContainer: UIView!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        let mapView = GMSMapView.map(withFrame: mapViewContainer.frame, camera: camera)
-        self.view.addSubview(mapView)
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        
+//        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
+        googleMapsView = GMSMapView (frame: self.mapViewContainer.frame)
+        googleMapsView.isMyLocationEnabled = true
+        googleMapsView.settings.compassButton = true
+        googleMapsView.settings.myLocationButton = true
+        googleMapsView.mapType = .normal
+        self.view.addSubview(googleMapsView)
+//        self.view.addSubview(mapView)
+        
+        
+//        gmsFetcher = GMSAutocompleteFetcher()
+//        gmsFetcher.delegate = self
+              
 
         // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
+//        let marker = GMSMarker()
+//        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
+//        marker.title = "Sydney"
+//        marker.snippet = "Australia"
+//        marker.map = mapView
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        let userLocation = locations.last
+        let center = CLLocationCoordinate2D(latitude: userLocation!.coordinate.latitude, longitude: userLocation!.coordinate.longitude)
+
+        let camera = GMSCameraPosition.camera(withLatitude: userLocation!.coordinate.latitude, longitude: userLocation!.coordinate.longitude, zoom: 15);
+        self.googleMapsView.camera = camera
+        self.googleMapsView.isMyLocationEnabled = true
+
+        let marker = GMSMarker(position: center)
+
+        print("Latitude :- \(userLocation!.coordinate.latitude)")
+        print("Longitude :-\(userLocation!.coordinate.longitude)")
+        marker.map = self.googleMapsView
+
+        marker.title = "Current Location"
+        locationManager.stopUpdatingLocation()
     }
 
     
