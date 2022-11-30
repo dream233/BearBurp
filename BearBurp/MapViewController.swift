@@ -27,8 +27,13 @@ class MapViewController: UIViewController{
     @IBAction func arBtnClicked(_ sender: Any) {
         arViewController = ARViewController()
         arViewController.dataSource = self
-        // 如何在main thread中执行
-        getDataFromMysql()
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.getDataFromMysql()
+            DispatchQueue.main.async {
+            }
+        }
+
         for s in theData?.message ?? []{
             let lat = CLLocationDegrees(s.latitude)
             let lon = CLLocationDegrees(s.longitude)
