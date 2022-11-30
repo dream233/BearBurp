@@ -33,7 +33,6 @@ class MapViewController: UIViewController{
             DispatchQueue.main.async {
             }
         }
-
         for s in theData?.message ?? []{
             let lat = CLLocationDegrees(s.latitude)
             let lon = CLLocationDegrees(s.longitude)
@@ -41,7 +40,9 @@ class MapViewController: UIViewController{
             let loc = CLLocation(latitude: lat, longitude: lon)
             let id = s.id
             let place = Place(location: loc, rate: s.rating, name: name, address: "",id: id)
-            list?.append(place)
+            if (place.distanceFromUser<1){
+                list?.append(place)
+            }
         }
         arViewController.setAnnotations(list ?? [])
 
