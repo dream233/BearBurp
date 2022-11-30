@@ -25,9 +25,22 @@ class ViewController: UIViewController{
     let defaults = UserDefaults.standard
     var sortData : restaurantAPIData?
     var isSort : Bool?
+    var refreshControl = UIRefreshControl()
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBAction func refreshBtnClicked(_ sender: Any) {
+        addLoadingView()
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.getDataFromMysql(query: "")
+            self.cacheImages()
+            
+            DispatchQueue.main.async {
+                self.removeLoadingView()
+                self.collectionView.reloadData()
+            }
+        }
+    }
     
     // Creative Portion 2: Users can sort the movies (by "Release date" or by "Rating")
     @IBAction func sortButton(_ sender: UIButton) {
@@ -67,6 +80,10 @@ class ViewController: UIViewController{
         self.title = "BearBurp"
         searchBar.delegate = self
         setupCollectionView()
+        refreshControl.addTarget(self, action: #selector(ViewController.refreshData),
+                                 for: .valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "Refreshing...")
+        collectionView.addSubview(refreshControl)
         addLoadingView()
         DispatchQueue.global(qos: .userInitiated).async {
             self.getDataFromMysql(query: "")
@@ -77,6 +94,15 @@ class ViewController: UIViewController{
                 self.collectionView.reloadData()
             }
         }
+        refreshData()
+    }
+    
+    @objc func refreshData() {
+        setupCollectionView()
+        getDataFromMysql(query: "")
+        cacheImages()
+        collectionView.reloadData()
+        refreshControl.endRefreshing()
     }
     
     func addLoadingView(){
@@ -114,13 +140,19 @@ class ViewController: UIViewController{
             .reduce("") { $0 + String($1) }
         
         // fetch data from mysql
-        url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/fetchdata.php?&query=\(myQuery)")
-        let data = try! Data(contentsOf: url!)
-        theData = try! JSONDecoder().decode(restaurantAPIData.self,from:data)
-        
-        // for sort button
-        sortData = theData
-        isSort = false
+        do{
+            url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/fetchdata.php?&query=\(myQuery)")
+            let data = try Data(contentsOf: url!)
+            theData = try! JSONDecoder().decode(restaurantAPIData.self,from:data)
+            
+            // for sort button
+            sortData = theData
+            isSort = false
+        }
+        catch{
+            print("error")
+        }
+
     }
     
     // Jiarong 11-06 update

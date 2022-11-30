@@ -30,12 +30,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate{
     @IBAction func arBtnClicked(_ sender: Any) {
         arViewController = ARViewController()
         arViewController.dataSource = self
-        
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.getDataFromMysql()
-            DispatchQueue.main.async {
-            }
-        }
+        getDataFromMysql()
         for s in theData?.message ?? []{
             let lat = CLLocationDegrees(s.latitude)
             let lon = CLLocationDegrees(s.longitude)
@@ -43,12 +38,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate{
             let loc = CLLocation(latitude: lat, longitude: lon)
             let id = s.id
             let place = Place(location: loc, rate: s.rating, name: name, address: "",id: id)
-            if (place.distanceFromUser<1){
-                list?.append(place)
-            }
+            list?.append(place)
         }
         arViewController.setAnnotations(list ?? [])
-
         self.present(arViewController, animated: true, completion: nil)
     }
 
@@ -152,7 +144,7 @@ extension MapViewController: ARDataSource {
       let annotationView = AnnotationView()
       annotationView.annotation = viewForAnnotation
       annotationView.delegate = self
-      annotationView.backgroundColor = .clear
+      annotationView.backgroundColor = .white
       annotationView.layer.cornerRadius = 10
       annotationView.layer.borderWidth = 1
       annotationView.layer.borderColor = UIColor(named: "black")?.cgColor

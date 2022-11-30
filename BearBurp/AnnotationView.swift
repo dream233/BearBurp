@@ -31,45 +31,46 @@ class AnnotationView: ARAnnotationView {
     }
   
     func loadUI() {
-      self.frame = CGRect(x: 0, y: 0, width: 200, height: 55)
-      self.subviews.forEach({ $0.removeFromSuperview()})
-      let label = UILabel(frame: CGRect(x: 10, y: 0, width: 180, height: 30))
-      label.font = UIFont.boldSystemFont(ofSize: 18)
-      label.numberOfLines = 0
-      label.backgroundColor = .clear
-      label.textColor = UIColor.black
-      self.addSubview(label)
+        self.frame = CGRect(x: 0, y: 0, width: 200, height: 55)
+        self.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        self.subviews.forEach({ $0.removeFromSuperview()})
+        let label = UILabel(frame: CGRect(x: 10, y: 0, width: 180, height: 30))
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.numberOfLines = 0
+        label.backgroundColor = .clear
+        label.textColor = UIColor.black
+        self.addSubview(label)
         label.alpha = 0.0
         UIView.animate(withDuration: 0.5) {
             label.alpha = 1.0
             self.layoutIfNeeded()
         }
-      
-      let rateStar = UILabel(frame: CGRect(x: 10, y: 30, width: 180, height: 20))
-      self.addSubview(rateStar)
+
+        let rateStar = UILabel(frame: CGRect(x: 10, y: 30, width: 180, height: 20))
+        self.addSubview(rateStar)
         rateStar.alpha = 0.0
         UIView.animate(withDuration: 0.5) {
             rateStar.alpha = 1.0
             self.layoutIfNeeded()
         }
-      
-      let distanceLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 180, height: 30))
-      distanceLabel.backgroundColor = .clear
-      distanceLabel.textAlignment = .right
-      distanceLabel.textColor = UIColor.black
-      distanceLabel.font = UIFont.boldSystemFont(ofSize: 14)
-      self.addSubview(distanceLabel)
+
+        let distanceLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 180, height: 30))
+        distanceLabel.backgroundColor = .clear
+        distanceLabel.textAlignment = .right
+        distanceLabel.textColor = UIColor.black
+        distanceLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        self.addSubview(distanceLabel)
         distanceLabel.alpha = 0.0
         UIView.animate(withDuration: 0.5) {
             distanceLabel.alpha = 1.0
             self.layoutIfNeeded()
         }
-      
-      if let annotation = annotation as? Place {
+
+        if let annotation = annotation as? Place {
           label.text = annotation.placeName
           distanceLabel.text = String(format: "%.2f km", annotation.distanceFromUser / 1000)
           rateStar.attributedText = NSMutableAttributedString().starWithRating(rating: Float(round(annotation.rateNum)), outOfTotal: 10, withFontSize: 14.0)
-      }
+        }
     }
     
     func loadDetailView(){
