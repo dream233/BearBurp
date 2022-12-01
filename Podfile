@@ -8,6 +8,7 @@ target 'BearBurp' do
   # Pods for BearBurp
 	pod 'HDAugmentedReality', '~> 3.0'
   pod 'GoogleMaps', '7.2.0'
+	pod 'DCKit'
 
   target 'BearBurpTests' do
     inherit! :search_paths

@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import SwiftUI
 
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var usernameInput: UITextField!
     @IBOutlet weak var pwInput: UITextField!
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var registerBtn: UIButton!
     
     var username:String?
     var password:String?
@@ -21,6 +24,30 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        
+        //UI
+        usernameInput.layer.cornerRadius = 10
+        usernameInput.layer.borderWidth = 1
+        usernameInput.layer.borderColor = UIColor.white.cgColor
+        usernameInput.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+
+        pwInput.layer.cornerRadius = 10
+        pwInput.layer.borderWidth = 1
+        pwInput.layer.borderColor = UIColor.white.cgColor
+        pwInput.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+
+
+        loginBtn.backgroundColor = .white
+        loginBtn.layer.cornerRadius = 17
+        loginBtn.layer.borderWidth = 1
+        loginBtn.layer.borderColor = UIColor.white.cgColor
+        loginBtn.clearColorForTitle()
+
+        registerBtn.backgroundColor = .white
+        registerBtn.layer.cornerRadius = 17
+        registerBtn.layer.borderWidth = 1
+        registerBtn.layer.borderColor = UIColor.white.cgColor
+        registerBtn.clearColorForTitle()
     }
     @IBAction func click_login(_ sender: Any) {
         var url:URL?
@@ -140,5 +167,44 @@ extension UIViewController {
         
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+//UI
+//reference: https://stackoverflow.com/questions/27458101/transparent-uibutton-title
+extension UIButton{
+    func clearColorForTitle() {
+
+        let buttonSize = bounds.size
+
+        if let font = titleLabel?.font{
+            let attribs = [NSAttributedString.Key.font: font]
+
+            if let textSize = titleLabel?.text?.size(withAttributes: attribs){
+                UIGraphicsBeginImageContextWithOptions(buttonSize, false, UIScreen.main.scale)
+
+                if let ctx = UIGraphicsGetCurrentContext(){
+                    ctx.setFillColor(UIColor.white.cgColor)
+
+                    let center = CGPoint(x: buttonSize.width / 2 - textSize.width / 2, y: buttonSize.height / 2 - textSize.height / 2)
+                    let path = UIBezierPath(rect: CGRect(x: 0, y: 0, width: buttonSize.width, height: buttonSize.height))
+                    ctx.addPath(path.cgPath)
+                    ctx.fillPath()
+                    ctx.setBlendMode(.destinationOut)
+
+                    titleLabel?.text?.draw(at: center, withAttributes: [NSAttributedString.Key.font: font])
+
+                    if let viewImage = UIGraphicsGetImageFromCurrentImageContext(){
+                        UIGraphicsEndImageContext()
+
+                        let maskLayer = CALayer()
+                        maskLayer.contents = ((viewImage.cgImage) as AnyObject)
+                        maskLayer.frame = bounds
+
+                        layer.mask = maskLayer
+                    }
+                }
+            }
+        }
     }
 }

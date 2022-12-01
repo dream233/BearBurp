@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ViewController: UIViewController{
     
@@ -88,13 +89,11 @@ class ViewController: UIViewController{
         DispatchQueue.global(qos: .userInitiated).async {
             self.getDataFromMysql(query: "")
             self.cacheImages()
-            
             DispatchQueue.main.async {
                 self.removeLoadingView()
                 self.collectionView.reloadData()
             }
         }
-        refreshData()
     }
     
     @objc func refreshData() {
@@ -205,7 +204,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate,U
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return theImageCache.count
+        return theData?.message.count ?? 0
     }
     
     // Jiarong 11-06 update

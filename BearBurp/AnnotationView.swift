@@ -7,6 +7,7 @@
 
 import UIKit
 import HDAugmentedReality
+import SwiftUI
 
 protocol AnnotationViewDelegate {
   func didTouch(annotationView: AnnotationView)

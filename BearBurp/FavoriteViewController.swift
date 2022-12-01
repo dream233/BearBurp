@@ -29,6 +29,13 @@ class FavoriteViewController: UIViewController {
         super.viewDidLoad()
         setupUserAvatar()
         setupTableView()
+        //UI - gradient background
+        let colorTop = UIColor(red: 253, green: 123, blue: 69, alpha: 1).cgColor
+        let colorMid = UIColor(red: 248, green: 67, blue: 37, alpha: 1).cgColor
+        let colorBot = UIColor(red: 242, green: 4, blue: 2, alpha: 1).cgColor
+
+        let gdLayer = CAGradientLayer()
+        gdLayer.frame = userBack.bounds
         userBack.backgroundColor = UIColor(red: 0.92, green: 0.92, blue: 0.88, alpha: 1.00)
     }
     override func viewWillAppear(_ animated: Bool) {

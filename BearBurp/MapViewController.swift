@@ -10,10 +10,12 @@ import CoreLocation
 import MapKit
 import HDAugmentedReality
 import GoogleMaps
+import SwiftUI
 
 class MapViewController: UIViewController, CLLocationManagerDelegate{
     fileprivate var arViewController: ARViewController!
     @IBOutlet weak var mapViewContainer: UIView!
+    @IBOutlet weak var arBtn: UIButton!
     var googleMapsView:GMSMapView!
     var theData : restaurantAPIData?
     var list: [Place]? = []
@@ -59,6 +61,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate{
         googleMapsView.settings.myLocationButton = true
         googleMapsView.mapType = .normal
         self.view.addSubview(googleMapsView)
+        
+        //UI
+        arBtn.layer.cornerRadius = 17
+        arBtn.layer.borderWidth = 1
+        arBtn.layer.borderColor = UIColor.white.cgColor
 //        self.view.addSubview(mapView)
         
         

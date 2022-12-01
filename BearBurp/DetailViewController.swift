@@ -8,6 +8,7 @@
 import UIKit
 import HDAugmentedReality
 import CoreLocation
+import SwiftUI
 
 class DetailViewController: UIViewController{
     
@@ -21,6 +22,12 @@ class DetailViewController: UIViewController{
     @IBOutlet weak var restaurantRate: UILabel!
     @IBOutlet weak var restaurantName: UILabel!
     @IBOutlet weak var favoriteBtn: UIButton!
+    @IBOutlet weak var directionBtn: UIButton!
+    @IBOutlet weak var reviewBtn: UIButton!
+    
+    
+    
+    
     @IBAction func directionARView(_ sender: Any) {
         arViewController = ARViewController()
         arViewController.dataSource = self
@@ -60,6 +67,14 @@ class DetailViewController: UIViewController{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        //UI
+        directionBtn.backgroundColor = .clear
+        directionBtn.layer.cornerRadius = 17
+        directionBtn.layer.borderWidth = 1
+
+        reviewBtn.backgroundColor = .clear
+        reviewBtn.layer.cornerRadius = 17
+        reviewBtn.layer.borderWidth = 1
 //        setLikedButton()
         addLoadingView()
         DispatchQueue.global(qos: .userInitiated).async {

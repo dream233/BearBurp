@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import SwiftUI
 
 class webViewController: UIViewController, WKNavigationDelegate {
 

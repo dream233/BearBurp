@@ -27,6 +27,7 @@
 		94767E1D291301DA00023638 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94767E1C291301DA00023638 /* LoadingView.swift */; };
 		947C282D29146E750062521F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C282C29146E750062521F /* MapViewController.swift */; };
 		9489017429196CCC0088D78C /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489017329196CCC0088D78C /* FavoriteViewController.swift */; };
+		94C70BD0293971080003D994 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C70BCF293971080003D994 /* TabBarController.swift */; };
 		94D7AE972914A386008E1088 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7AE962914A386008E1088 /* AnnotationView.swift */; };
 		94D7AE992914A4B6008E1088 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7AE982914A4B6008E1088 /* Place.swift */; };
 		94E029A72922B8EE00DBBCB6 /* Pods_BearBurp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B924489C656DACC1BC3DC01 /* Pods_BearBurp.framework */; };
@@ -82,6 +83,7 @@
 		94767E1C291301DA00023638 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		947C282C29146E750062521F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9489017329196CCC0088D78C /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		94C70BCF293971080003D994 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		94D7AE962914A386008E1088 /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
 		94D7AE982914A4B6008E1088 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		A51509275FD50CA05FB4A57D /* Pods_BearBurp_BearBurpUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BearBurp_BearBurpUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +168,7 @@
 				1B72A4C0290CE2BD00E2F244 /* LaunchScreen.storyboard */,
 				1B72A4C3290CE2BD00E2F244 /* Info.plist */,
 				1B72A4E9290EE8AD00E2F244 /* dataStructure.swift */,
+				94C70BCF293971080003D994 /* TabBarController.swift */,
 				1B184B042910915E001395A7 /* webViewController.swift */,
 				94767E1C291301DA00023638 /* LoadingView.swift */,
 				947C282C29146E750062521F /* MapViewController.swift */,
@@ -487,6 +490,7 @@
 				1B72A4BA290CE2BB00E2F244 /* ViewController.swift in Sources */,
 				6157269F2919762600268AAD /* LoginViewController.swift in Sources */,
 				1B72A4B6290CE2BB00E2F244 /* AppDelegate.swift in Sources */,
+				94C70BD0293971080003D994 /* TabBarController.swift in Sources */,
 				947C282D29146E750062521F /* MapViewController.swift in Sources */,
 				1B72A4B8290CE2BB00E2F244 /* SceneDelegate.swift in Sources */,
 				1B184B052910915E001395A7 /* webViewController.swift in Sources */,
