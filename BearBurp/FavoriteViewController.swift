@@ -24,6 +24,7 @@ class FavoriteViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userBack: UIView!
     @IBOutlet weak var uploadButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class FavoriteViewController: UIViewController {
         let gdLayer = CAGradientLayer()
         gdLayer.frame = userBack.bounds
         userBack.backgroundColor = UIColor(red: 0.92, green: 0.92, blue: 0.88, alpha: 1.00)
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         setupUserAvatar()
@@ -56,10 +58,14 @@ class FavoriteViewController: UIViewController {
         }
         tableView.reloadData()
         setupUserAvatar()
-//        if(UserDefaults.standard.string(forKey: "myName")==nil){
-//        }else{
-//            connectBtn.setTitle("Update Profile", for: .normal)
-//        }
+
+        // move logout below tableview
+//        titleView.frame.maxY + margin
+//        logoutButton.frame.origin.y = 500 //tableView.frame.maxY - 50
+//        logoutButton.addTarget(self, action: #selector(didPressLogout), for: .touchUpInside)
+        
+        view.bringSubviewToFront(logoutButton)
+        
             
     }
     
@@ -100,7 +106,28 @@ class FavoriteViewController: UIViewController {
         vc.allowsEditing = true
         present(vc, animated: true)
     }
+    
+    @objc func didPressLogout(sender: UIButton!) {
+        print("rebind pressed logout")
+//      reset user default
+        defaults.set(nil, forKey: "username")
+        
+//      send to login page
+        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "login") as! LoginViewController
+//        self.present(loginVC, animated: true, completion: nil)
+        self.navigationController?.setViewControllers([loginVC], animated: true)
+    }
 
+    @IBAction func pressLogout(_ sender: Any) {
+        print("pressed logout")
+//      reset user default
+        defaults.set(nil, forKey: "username")
+        
+//      send to login page
+        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "login") as! LoginViewController
+//        self.present(loginVC, animated: true, completion: nil)
+        self.navigationController?.setViewControllers([loginVC], animated: true)
+    }
 }
 
 
@@ -201,30 +228,4 @@ extension FavoriteViewController: UIImagePickerControllerDelegate, UINavigationC
         picker.dismiss(animated: true, completion: nil)
     }
 }
-//// MARK: - PHPicker Configurations (PHPickerViewControllerDelegate)
-//extension FavoriteViewController: PHPickerViewControllerDelegate {
-//    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-//         picker.dismiss(animated: true, completion: .none)
-//        let group = DispatchGroup()
-//
-//        self.userAvatar.image = UIImage(systemName: "circle")
-//         results.forEach { result in
-//             group.enter()
-//               result.itemProvider.loadObject(ofClass: UIImage.self) { reading, error in
-//                   defer{
-//                       group.leave()
-//                   }
-//               guard let image = reading as? UIImage, error == nil else {
-//                   print("!!!!!!!!!!!! PHPicker failed")
-//                   print(error)
-//
-//                   return }
-//                   print (image)
-//          }
-//       }
-//        group.notify(queue: .main){
-//            print("image loop done")
-//        }
-//  }
-//}
-//
+

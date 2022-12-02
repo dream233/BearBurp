@@ -321,7 +321,7 @@
         <!--Login View Controller-->
         <scene sceneID="4bV-m2-cWW">
             <objects>
-                <viewController id="IhT-rq-dcG" customClass="LoginViewController" customModule="BearBurp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="IhT-rq-dcG" customClass="LoginViewController" customModule="BearBurp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0xq-Dg-kt3" customClass="Login">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -655,8 +655,46 @@
                             <constraint firstItem="0aN-NJ-eYa" firstAttribute="top" secondItem="a56-sU-f4y" secondAttribute="bottom" constant="15" id="zg7-6z-Tzr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="lqI-eP-58Z"/>
+                    <navigationItem key="navigationItem" id="lqI-eP-58Z">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="hJm-xY-iut">
+                            <button key="customView" opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="Cd7-kp-5CT">
+                                <rect key="frame" x="16" y="4.6666666666666679" width="114" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Login">
+                                            <attributes>
+                                                <font key="NSFont" size="18" name="Helvetica-Bold"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <buttonConfiguration key="configuration" style="tinted">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Log Out">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="13" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="click_login:" destination="IhT-rq-dcG" eventType="touchUpInside" id="MgT-lX-tNy"/>
+                                    <action selector="pressLogout:" destination="68P-o4-K30" eventType="touchUpInside" id="Lwu-eW-Pnn"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="logoutButton" destination="Cd7-kp-5CT" id="7JT-Rg-Hzz"/>
                         <outlet property="tableView" destination="0aN-NJ-eYa" id="9Rg-Cq-mr6"/>
                         <outlet property="uploadButton" destination="Jq3-xR-0mU" id="Ojf-go-s0l"/>
                         <outlet property="userAvatar" destination="8Io-R6-AnU" id="j7I-sp-veH"/>
