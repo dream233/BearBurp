@@ -27,12 +27,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate{
         url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/fetchdata.php?&query=")
         let data = try! Data(contentsOf: url!)
         theData = try! JSONDecoder().decode(restaurantAPIData.self,from:data)
-    }
-    
-    @IBAction func arBtnClicked(_ sender: Any) {
-        arViewController = ARViewController()
-        arViewController.dataSource = self
-        getDataFromMysql()
         for s in theData?.message ?? []{
             let lat = CLLocationDegrees(s.latitude)
             let lon = CLLocationDegrees(s.longitude)
@@ -43,7 +37,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate{
             list?.append(place)
         }
         arViewController.setAnnotations(list ?? [])
-        self.present(arViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func arBtnClicked(_ sender: Any) {
+        arViewController = ARViewController()
+        arViewController.dataSource = self
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.getDataFromMysql()
+            DispatchQueue.main.async {
+                self.present(self.arViewController, animated: true, completion: nil)
+            }
+        }
+        
+
     }
 
     

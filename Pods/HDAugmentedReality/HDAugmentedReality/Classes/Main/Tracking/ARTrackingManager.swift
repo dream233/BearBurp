@@ -131,13 +131,14 @@ public class ARTrackingManager: NSObject, CLLocationManagerDelegate
         self.resetAllTrackingData()
 
         // Request authorization if state is not determined, no need to wait for result.
-        if CLLocationManager.locationServicesEnabled()
-        {
+
             if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.notDetermined
             {
-                self.locationManager.requestWhenInUseAuthorization()
+                if CLLocationManager.locationServicesEnabled()
+                {
+                    self.locationManager.requestWhenInUseAuthorization()
+                }
             }
-        }
         
         // Location search. Used for finding first location, so if location cannot be found, app can throw alert or something.
         if notifyLocationFailure

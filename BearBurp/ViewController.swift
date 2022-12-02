@@ -47,16 +47,6 @@ class ViewController: UIViewController{
     @IBAction func sortButton(_ sender: UIButton) {
         sender.showsMenuAsPrimaryAction = true
         sender.menu = UIMenu(children: [
-            
-            // may can add "distance"
-//                UIAction(title: "Release date", handler: { action in
-//                    if(!self.movies.isEmpty){
-//                        self.movies.sort(by: {$0.release_date! > $1.release_date!})
-//                    }
-//                    self.imageCache = []
-//                    self.cacheImages()
-//                    self.collectionView.reloadData()
-//                }),
                 UIAction(title: "Rating", handler: { action in
                     if(self.isSort == true){
                         self.theData = self.sortData

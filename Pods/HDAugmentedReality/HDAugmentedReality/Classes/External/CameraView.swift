@@ -51,7 +51,10 @@ open class CameraView: UIView
             self.backgroundColor = UIColor.darkGray
         #endif
         //print("CameraView: Called startRunning before added to subview")
-        self.captureSession?.startRunning()
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.captureSession?.startRunning()
+        }
+        
     }
     
     /// Stops running capture session
