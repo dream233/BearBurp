@@ -55,12 +55,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // get current location
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         
-//        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
+        //ini google map
         googleMapsView = GMSMapView (frame: self.mapViewContainer.frame)
         googleMapsView.isMyLocationEnabled = true
         googleMapsView.settings.compassButton = true
@@ -72,21 +74,26 @@ class MapViewController: UIViewController, CLLocationManagerDelegate{
         arBtn.layer.cornerRadius = 17
         arBtn.layer.borderWidth = 1
         arBtn.layer.borderColor = UIColor.white.cgColor
-//        self.view.addSubview(mapView)
-        
-        
-//        gmsFetcher = GMSAutocompleteFetcher()
-//        gmsFetcher.delegate = self
               
-
-        // Creates a marker in the center of the map.
-//        let marker = GMSMarker()
-//        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-//        marker.title = "Sydney"
-//        marker.snippet = "Australia"
-//        marker.map = mapView
+        fetchLocation()
+        for item in theData?.message ?? [] {
+            // Creates markers of restaurants.
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2D(latitude: item.latitude, longitude: item.longitude)
+            marker.title = item.name
+            marker.map = googleMapsView
+        }
     }
     
+    // get restaurants location
+    func fetchLocation(){
+        var url:URL?
+        url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/fetchdata.php?&query=")
+        let data = try! Data(contentsOf: url!)
+        theData = try! JSONDecoder().decode(restaurantAPIData.self,from:data)
+    }
+    
+    // get current location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
         let userLocation = locations.last
