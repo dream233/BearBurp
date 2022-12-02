@@ -13,7 +13,7 @@ class LoadingView: UIView {
 
     public var lineWidth: Int = 4
 
-    public var lineColor: UIColor = UIColor(red: 0.00, green: 0.42, blue: 0.46, alpha: 1.00)
+    public var lineColor: UIColor = UIColor(red: 1.00, green: 0.13, blue: 0.09, alpha: 1.00)
 
     fileprivate var timer: Timer?
 

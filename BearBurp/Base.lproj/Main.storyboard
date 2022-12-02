@@ -162,7 +162,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3dA-aW-c4C">
-                                <rect key="frame" x="23" y="404" width="344" height="440"/>
+                                <rect key="frame" x="0.0" y="404" width="390" height="440"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -226,10 +226,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6Uo-Oi-WdJ">
-                                <rect key="frame" x="16" y="141" width="358" height="703"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6Uo-Oi-WdJ">
+                                <rect key="frame" x="0.0" y="141" width="390" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="703" id="cDV-RP-5ys"/>
+                                </constraints>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RK6-No-Q5I">
                                 <rect key="frame" x="288" y="47" width="86" height="31"/>
@@ -240,9 +242,11 @@
                                     <action selector="writeReviewBtnClicked:" destination="pry-Rq-aXS" eventType="touchUpInside" id="hwu-Z6-RzH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okb-8T-70M">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okb-8T-70M">
                                 <rect key="frame" x="16" y="85" width="147" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="AJg-eH-13h"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -250,6 +254,14 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ttq-Ae-35H"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="okb-8T-70M" firstAttribute="leading" secondItem="ttq-Ae-35H" secondAttribute="leading" constant="16" id="0c8-mO-vNa"/>
+                            <constraint firstItem="ttq-Ae-35H" firstAttribute="trailing" secondItem="okb-8T-70M" secondAttribute="trailing" constant="227" id="D7S-5X-Y1f"/>
+                            <constraint firstItem="okb-8T-70M" firstAttribute="top" secondItem="ttq-Ae-35H" secondAttribute="top" constant="38" id="JRR-oo-JjX"/>
+                            <constraint firstItem="6Uo-Oi-WdJ" firstAttribute="trailing" secondItem="ttq-Ae-35H" secondAttribute="trailing" id="dn6-K9-i7T"/>
+                            <constraint firstItem="6Uo-Oi-WdJ" firstAttribute="leading" secondItem="ttq-Ae-35H" secondAttribute="leading" id="jKg-Pj-kHl"/>
+                            <constraint firstItem="6Uo-Oi-WdJ" firstAttribute="top" secondItem="okb-8T-70M" secondAttribute="bottom" constant="34" id="lHS-2o-9I6"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="restaurantName" destination="okb-8T-70M" id="7dG-Av-i0Q"/>
@@ -549,7 +561,7 @@
         <!--Favorite-->
         <scene sceneID="IiD-zj-0D1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8kq-ZB-dXk" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="favoriteNav" automaticallyAdjustsScrollViewInsets="NO" id="8kq-ZB-dXk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favorite" image="heart" catalog="system" id="a5Y-uh-AWs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zj3-gZ-FwS">
@@ -574,10 +586,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0aN-NJ-eYa">
-                                <rect key="frame" x="16" y="380" width="358" height="349"/>
+                                <rect key="frame" x="0.0" y="380" width="390" height="464"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="349" id="HMH-Kj-WNu"/>
+                                    <constraint firstAttribute="height" constant="464" id="hnd-rW-ZMZ"/>
                                 </constraints>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xb-Hg-JKB">
@@ -622,16 +634,16 @@
                         <viewLayoutGuide key="safeArea" id="LJS-Je-99T"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="0aN-NJ-eYa" firstAttribute="bottom" secondItem="LJS-Je-99T" secondAttribute="bottom" constant="34" id="0hU-3o-crz"/>
                             <constraint firstItem="LJS-Je-99T" firstAttribute="trailing" secondItem="a56-sU-f4y" secondAttribute="trailing" constant="204" id="2Dh-fg-OOn"/>
-                            <constraint firstItem="0aN-NJ-eYa" firstAttribute="bottom" secondItem="LJS-Je-99T" secondAttribute="bottom" constant="-81" id="2Vj-cP-8n5"/>
-                            <constraint firstItem="0aN-NJ-eYa" firstAttribute="leading" secondItem="LJS-Je-99T" secondAttribute="leading" constant="16" id="DGO-ya-YxH"/>
-                            <constraint firstItem="0aN-NJ-eYa" firstAttribute="top" secondItem="a56-sU-f4y" secondAttribute="bottom" constant="15" id="NgO-Q7-K2m"/>
+                            <constraint firstItem="0aN-NJ-eYa" firstAttribute="trailing" secondItem="LJS-Je-99T" secondAttribute="trailing" id="MYe-q6-bx1"/>
                             <constraint firstItem="a56-sU-f4y" firstAttribute="leading" secondItem="LJS-Je-99T" secondAttribute="leading" constant="16" id="OBu-Zf-YL8"/>
                             <constraint firstItem="1xb-Hg-JKB" firstAttribute="top" secondItem="LJS-Je-99T" secondAttribute="top" constant="-98" id="SSk-gQ-wHW"/>
                             <constraint firstItem="LJS-Je-99T" firstAttribute="trailing" secondItem="1xb-Hg-JKB" secondAttribute="trailing" id="fDh-Yy-WJb"/>
                             <constraint firstItem="a56-sU-f4y" firstAttribute="top" secondItem="1xb-Hg-JKB" secondAttribute="bottom" constant="8" symbolic="YES" id="hvE-LA-swu"/>
+                            <constraint firstItem="0aN-NJ-eYa" firstAttribute="leading" secondItem="LJS-Je-99T" secondAttribute="leading" id="kVh-be-ZhH"/>
                             <constraint firstItem="1xb-Hg-JKB" firstAttribute="leading" secondItem="LJS-Je-99T" secondAttribute="leading" id="wRx-7K-ZVF"/>
-                            <constraint firstItem="LJS-Je-99T" firstAttribute="trailing" secondItem="0aN-NJ-eYa" secondAttribute="trailing" constant="16" id="ym5-hk-b1K"/>
+                            <constraint firstItem="0aN-NJ-eYa" firstAttribute="top" secondItem="a56-sU-f4y" secondAttribute="bottom" constant="15" id="zg7-6z-Tzr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lqI-eP-58Z"/>

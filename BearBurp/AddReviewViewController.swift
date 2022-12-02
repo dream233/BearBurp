@@ -11,13 +11,33 @@ import SwiftUI
 class AddReviewViewController: UIViewController {
 
     var name: String = "namePlaceHolder"
-    var movieId: Int?
     let submitBtn = UIButton()
     
     @IBOutlet weak var restaurantName: UILabel!
     @IBOutlet weak var writeReviewView: UITextView!
     @IBOutlet weak var submitBtnLabel: UIButton!
     @IBAction func submitBtnClicked(_ sender: Any) {
+//        let userName = UserDefaults.standard.string(forKey: "username")
+//        if(userName==nil){
+//            alert(title: "Login Needed", message: "Please login before adding reviews!")
+//        }else{
+//            if(writeReviewView.text==""){
+//                alert(title: "Review Empty", message: "Please add reviews before you submit!")
+//            }else{
+//                let userId = movieId
+//                let movieName = movieTitle
+//                let review = writeReviewView.text
+//                let userAvar = ((userName ?? "") + "/" + "imagedata")
+//
+//                let myReview = Review(userName: userName!, userAvar: userAvar, movieId: movieId!, movieName: movieName, review: review!)
+//
+//                let addToDatabase = DatabaseCommand.insertRow(myReview)
+//
+//                if addToDatabase == true {
+//                    navigationController?.popViewController(animated: true)
+//                }
+//            }
+//        }
     }
     
     override func viewDidLoad() {

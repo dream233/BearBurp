@@ -160,7 +160,7 @@ extension MapViewController: ARDataSource {
       annotationView.backgroundColor = .white
       annotationView.layer.cornerRadius = 10
       annotationView.layer.borderWidth = 1
-      annotationView.layer.borderColor = UIColor(named: "black")?.cgColor
+      annotationView.layer.borderColor = UIColor(red: 1.00, green: 0.13, blue: 0.09, alpha: 1.00).cgColor
       annotationView.frame = CGRect(x: 0, y: 0, width: 200, height: 55)
 //      annotationView.restaurant = restaurant
       annotationView.loadUI()

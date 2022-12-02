@@ -173,6 +173,8 @@ extension FavoriteViewController: UITableViewDelegate,UITableViewDataSource {
             }
         }
     }
+    
+    
 
 }
 
@@ -191,7 +193,6 @@ extension FavoriteViewController: UIImagePickerControllerDelegate, UINavigationC
                 // Store the image data to DB/default
                 guard let username = UserDefaults.standard.string(forKey: "username") else { return}
                 let key = username + "/" + "imagedata"
-                print("the key is \(key)")
                 defaults.set(imageData, forKey: key)
             }
         }
