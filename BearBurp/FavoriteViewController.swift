@@ -107,17 +107,6 @@ class FavoriteViewController: UIViewController {
         present(vc, animated: true)
     }
     
-    @objc func didPressLogout(sender: UIButton!) {
-        print("rebind pressed logout")
-//      reset user default
-        defaults.set(nil, forKey: "username")
-        
-//      send to login page
-        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "login") as! LoginViewController
-//        self.present(loginVC, animated: true, completion: nil)
-        self.navigationController?.setViewControllers([loginVC], animated: true)
-    }
-
     @IBAction func pressLogout(_ sender: Any) {
         print("pressed logout")
 //      reset user default

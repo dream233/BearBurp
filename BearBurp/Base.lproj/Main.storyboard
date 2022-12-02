@@ -613,9 +613,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jq3-xR-0mU" userLabel="updateBtn">
-                                        <rect key="frame" x="233" y="238" width="37" height="31"/>
+                                        <rect key="frame" x="234.66666666666666" y="243" width="45.333333333333343" height="31"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="⨁"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="plus.circle.fill" catalog="system"/>
                                         <connections>
                                             <action selector="pressUploadImg:" destination="68P-o4-K30" eventType="touchUpInside" id="FDV-bA-XE0"/>
                                         </connections>
@@ -624,9 +624,9 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="aHC-6Y-G3c" firstAttribute="leading" secondItem="1xb-Hg-JKB" secondAttribute="leading" constant="16" id="58h-H2-dnX"/>
-                                    <constraint firstItem="aHC-6Y-G3c" firstAttribute="top" secondItem="Jq3-xR-0mU" secondAttribute="bottom" constant="10" id="Ydr-3N-StY"/>
+                                    <constraint firstItem="aHC-6Y-G3c" firstAttribute="top" secondItem="Jq3-xR-0mU" secondAttribute="bottom" constant="5" id="Ydr-3N-StY"/>
                                     <constraint firstAttribute="bottom" secondItem="aHC-6Y-G3c" secondAttribute="bottom" id="ZC6-hO-0Qy"/>
-                                    <constraint firstAttribute="trailing" secondItem="Jq3-xR-0mU" secondAttribute="trailing" constant="120" id="ciR-vz-okX"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jq3-xR-0mU" secondAttribute="trailing" constant="110" id="ciR-vz-okX"/>
                                     <constraint firstAttribute="trailing" secondItem="aHC-6Y-G3c" secondAttribute="trailing" constant="15" id="k6F-Ix-UC0"/>
                                 </constraints>
                             </view>
@@ -656,45 +656,23 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lqI-eP-58Z">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="hJm-xY-iut">
-                            <button key="customView" opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="Cd7-kp-5CT">
-                                <rect key="frame" x="16" y="4.6666666666666679" width="114" height="35"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="hLU-f4-Tph">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ncf-is-VTp">
+                                <rect key="frame" x="35" y="135" width="76" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Button">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Login">
-                                            <attributes>
-                                                <font key="NSFont" size="18" name="Helvetica-Bold"/>
-                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <buttonConfiguration key="configuration" style="tinted">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Log Out">
-                                            <attributes>
-                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" size="13" name="Helvetica-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Log Out">
                                     <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="click_login:" destination="IhT-rq-dcG" eventType="touchUpInside" id="MgT-lX-tNy"/>
-                                    <action selector="pressLogout:" destination="68P-o4-K30" eventType="touchUpInside" id="Lwu-eW-Pnn"/>
+                                    <action selector="pressLogout:" destination="68P-o4-K30" eventType="touchUpInside" id="Dzy-Tg-fn1"/>
                                 </connections>
                             </button>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="logoutButton" destination="Cd7-kp-5CT" id="7JT-Rg-Hzz"/>
+                        <outlet property="logoutButton" destination="ncf-is-VTp" id="G1a-B7-CmC"/>
                         <outlet property="tableView" destination="0aN-NJ-eYa" id="9Rg-Cq-mr6"/>
                         <outlet property="uploadButton" destination="Jq3-xR-0mU" id="Ojf-go-s0l"/>
                         <outlet property="userAvatar" destination="8Io-R6-AnU" id="j7I-sp-veH"/>
@@ -716,6 +694,7 @@
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="mount.fill" catalog="system" width="119" height="128"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="red landscape" width="600" height="1299"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="text.bubble" catalog="system" width="128" height="110"/>
