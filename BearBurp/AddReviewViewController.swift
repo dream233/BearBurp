@@ -12,11 +12,19 @@ class AddReviewViewController: UIViewController {
 
     var restaurant: Restaurant?
     let submitBtn = UIButton()
-    var theData:Message?
+    var theData:addReviewAPIData?
     
     @IBOutlet weak var restaurantName: UILabel!
     @IBOutlet weak var writeReviewView: UITextView!
     @IBOutlet weak var submitBtnLabel: UIButton!
+    @IBOutlet weak var rateLabel: UILabel!
+    
+    @IBOutlet weak var slideBar: UISlider!
+    @IBAction func slideBarChanged(_ sender: Any) {
+        rateLabel.text = String(format: "%.1f", slideBar.value)
+    }
+    
+    
     @IBAction func submitBtnClicked(_ sender: Any) {
         let userName = UserDefaults.standard.string(forKey: "username")
         if(userName==nil){
@@ -26,20 +34,22 @@ class AddReviewViewController: UIViewController {
                 alert(title: "Review Empty", message: "Please add reviews before you submit!")
             }else{
                 let myUserName = userName
-                let restaurantId = restaurant?.id
-                let review = writeReviewView.text
-                let userAvar = UserDefaults.standard.string(forKey: ((userName ?? "") + "/" + "imagedata")) ?? ""
+                let restaurantName = restaurant?.name
+                var review = writeReviewView.text
+                let rating = Float(String(format: "%.1f", slideBar.value) )
+                review = review?.toBase64()
                 
                 var url:URL?
-                url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/addReview.php?username=\(myUserName!)&restaurantId=\(restaurantId!)&rid=\(review!)&userAvar=\(userAvar)")
+                url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/addReview.php?username=\(myUserName!)&restaurantName=\(restaurantName!)&review=\(review!)&rating=\(rating!)")
                 let data = try! Data(contentsOf: url!)
-                theData = try! JSONDecoder().decode(Message.self,from:data)
+                theData = try! JSONDecoder().decode(addReviewAPIData.self,from:data)
                 
-                if let regIndicator = theData?.success, let regMSG = theData?.message {
+                if let regIndicator = theData?.success {
                     if (!regIndicator){
-                        alert(title: "Error", message: regMSG)
+                        alert(title: "Error", message: "Add review failed!")
                     }else{
                         navigationController?.popViewController(animated: true)
+                        
                     }
                 }
 
@@ -82,6 +92,12 @@ class AddReviewViewController: UIViewController {
         submitBtnLabel.layer.masksToBounds = true
         submitBtnLabel.frame = submitBtnFrame
         
+        slideBar.minimumValue = 0
+        slideBar.maximumValue = 9.9
+        slideBar.value = 5
+        slideBar.setValue(5, animated: true)
+        rateLabel.text = String(format: "%.1f", slideBar.value)
+        
     }
 
     func alert(title:String, message:String){
@@ -89,6 +105,22 @@ class AddReviewViewController: UIViewController {
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
+    }
+
+}
+
+extension String {
+
+    func fromBase64() -> String? {
+        guard let data = Data(base64Encoded: self) else {
+            return nil
+        }
+
+        return String(data: data, encoding: .utf8)
+    }
+
+    func toBase64() -> String {
+        return Data(self.utf8).base64EncodedString()
     }
 
 }

@@ -55,6 +55,15 @@ class ReviewViewController: UIViewController {
         }
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.getReviewData()
+            
+            DispatchQueue.main.async {
+                self.restaurantTableView.reloadData()
+            }
+        }
+    }
     
     func setupTableView() {
         restaurantTableView.dataSource = self
@@ -64,7 +73,7 @@ class ReviewViewController: UIViewController {
     
     func getReviewData(){
         var url:URL?
-        url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/fetchreview.php?&rid=\(restaurant.id)")
+        url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/fetchreview.php?restaurantName=\(restaurant.name)")
         let data = try! Data(contentsOf: url!)
         reviews = try! JSONDecoder().decode(reviewAPIData.self,from:data)
     }
@@ -85,22 +94,14 @@ extension ReviewViewController: UITableViewDelegate,UITableViewDataSource {
         cell.layer.cornerRadius = 4
         cell.clipsToBounds = true
         
-        cell.textLabel!.text =  "User: \(reviews?.message[indexPath.item].uid ?? 0)    Rate:\(reviews?.message[indexPath.item].rating ?? 0)"
+        cell.textLabel!.text =  "User: \(reviews?.message[indexPath.item].username ?? "default")    Rate:\(reviews?.message[indexPath.item].rating ?? 0)"
         cell.textLabel!.font = UIFont.systemFont(ofSize: 10)
         cell.textLabel?.textColor = UIColor.gray
         cell.detailTextLabel?.numberOfLines = 0
-        cell.detailTextLabel?.text = "Content: \(reviews?.message[indexPath.item].content ?? "empty")"
+        let review = (reviews?.message[indexPath.item].content ?? "empty").fromBase64()
+        cell.detailTextLabel?.text = review
         cell.detailTextLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         cell.detailTextLabel?.textColor = UIColor.black
-//        let newImageData = Data(base64Encoded: reviews?.message[indexPath.item].userAvar)
-
-//        var newImage = UIImage(data: newImageData!)
-//        if(newImageData?.count==0){
-//            newImage = UIImage(systemName: "face.smiling")
-//        }
-//
-//        cell.imageView?.image = newImage
-//        cell.isUserInteractionEnabled = false
         return cell
     }
     

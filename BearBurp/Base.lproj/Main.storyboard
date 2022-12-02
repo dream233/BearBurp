@@ -310,6 +310,28 @@
                                             <action selector="submitBtnClicked:" destination="rsI-b2-QTa" eventType="touchUpInside" id="skp-so-nvp"/>
                                         </connections>
                                     </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5dZ-GL-jSX">
+                                        <rect key="frame" x="88" y="342" width="118" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="1" green="0.1333333333" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="slideBarChanged:" destination="rsI-b2-QTa" eventType="valueChanged" id="6gj-J7-quW"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHv-ur-YFL">
+                                        <rect key="frame" x="21" y="347" width="40" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOJ-WA-3Ud">
+                                        <rect key="frame" x="132" y="313" width="45" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -335,7 +357,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="rateLabel" destination="MOJ-WA-3Ud" id="QrK-hg-f0b"/>
                         <outlet property="restaurantName" destination="P8X-l1-Lop" id="qcb-Sc-XIo"/>
+                        <outlet property="slideBar" destination="5dZ-GL-jSX" id="ui5-xy-FCt"/>
                         <outlet property="submitBtnLabel" destination="7K8-CA-OUf" id="cyK-WS-vIx"/>
                         <outlet property="writeReviewView" destination="3h9-z0-3mQ" id="TMl-Sw-V47"/>
                     </connections>
@@ -379,7 +403,7 @@
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="iEE-J4-Z4U">
                                         <rect key="frame" x="0.0" y="164" width="232" height="35"/>
