@@ -30,9 +30,9 @@ class FavoriteViewController: UIViewController {
         setupUserAvatar()
         setupTableView()
         //UI - gradient background
-        let colorTop = UIColor(red: 253, green: 123, blue: 69, alpha: 1).cgColor
-        let colorMid = UIColor(red: 248, green: 67, blue: 37, alpha: 1).cgColor
-        let colorBot = UIColor(red: 242, green: 4, blue: 2, alpha: 1).cgColor
+//        let colorTop = UIColor(red: 253, green: 123, blue: 69, alpha: 1).cgColor
+//        let colorMid = UIColor(red: 248, green: 67, blue: 37, alpha: 1).cgColor
+//        let colorBot = UIColor(red: 242, green: 4, blue: 2, alpha: 1).cgColor
 
         let gdLayer = CAGradientLayer()
         gdLayer.frame = userBack.bounds
@@ -78,7 +78,6 @@ class FavoriteViewController: UIViewController {
         /// getting avatar from DB/default
         if let username = UserDefaults.standard.string(forKey: "username"){
             let key = username + "/" + "imagedata"
-            print("the key is \(key)")
             if let imageData = UserDefaults.standard.data(forKey: key){
                 userAvatar.image = UIImage(data: imageData)
             }else{
