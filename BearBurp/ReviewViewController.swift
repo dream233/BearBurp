@@ -17,7 +17,7 @@ class ReviewViewController: UIViewController {
     @IBOutlet weak var writeReviewBtn: UIButton!
     @IBAction func writeReviewBtnClicked(_ sender: Any) {
         let addReviewCV = self.storyboard?.instantiateViewController(withIdentifier: "addReview") as! AddReviewViewController
-        addReviewCV.name = restaurant.name
+        addReviewCV.restaurant = restaurant
         navigationController?.pushViewController(addReviewCV, animated: true)
     }
     @IBOutlet weak var restaurantName: UILabel!
@@ -93,14 +93,14 @@ extension ReviewViewController: UITableViewDelegate,UITableViewDataSource {
         cell.detailTextLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         cell.detailTextLabel?.textColor = UIColor.black
 //        let newImageData = Data(base64Encoded: reviews?.message[indexPath.item].userAvar)
-//
+
 //        var newImage = UIImage(data: newImageData!)
 //        if(newImageData?.count==0){
-//            newImage = UIImage(named: "black")
+//            newImage = UIImage(systemName: "face.smiling")
 //        }
 //
 //        cell.imageView?.image = newImage
-        cell.isUserInteractionEnabled = false
+//        cell.isUserInteractionEnabled = false
         return cell
     }
     
