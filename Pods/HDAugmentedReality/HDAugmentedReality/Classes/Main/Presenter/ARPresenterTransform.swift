@@ -16,7 +16,7 @@ import UIKit
  ARPresenterTransform can change arPositionOffset of annotations, or set transform.
 
  */
-public protocol ARPresenterTransform: AnyObject
+public protocol ARPresenterTransform: class
 {
     /// ARresenter, it is set when setting presenterTransform on presenter.
     var arPresenter: ARPresenter! { set get }

@@ -68,13 +68,14 @@ class DetailViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         //UI
-        directionBtn.backgroundColor = .clear
-        directionBtn.layer.cornerRadius = 17
-        directionBtn.layer.borderWidth = 1
-
-        reviewBtn.backgroundColor = .clear
-        reviewBtn.layer.cornerRadius = 17
-        reviewBtn.layer.borderWidth = 1
+//        directionBtn.backgroundColor = .clear
+//        directionBtn.layer.cornerRadius = 17
+//        directionBtn.layer.borderWidth = 1
+//
+//        reviewBtn.backgroundColor = .clear
+//        reviewBtn.layer.cornerRadius = 17
+//        reviewBtn.layer.borderWidth = 1
+        
 //        setLikedButton()
         addLoadingView()
         DispatchQueue.global(qos: .userInitiated).async {
