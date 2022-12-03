@@ -154,6 +154,13 @@ extension DetailViewController:UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
         cell.textLabel!.text = foods?.message[indexPath.row].name
+
+        if let content = cell.textLabel!.text{
+            if content.count > 32{
+                cell.textLabel!.text = String(content.prefix(32)) + "..."
+            }
+        }
+
         cell.detailTextLabel!.text = "\(foods?.message[indexPath.row].price ?? 0.0) $"
         return cell
     }
