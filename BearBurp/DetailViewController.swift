@@ -147,8 +147,8 @@ extension DetailViewController:UITableViewDataSource, UITableViewDelegate{
         cell.detailTextLabel!.text = "$ \(foods?.message[indexPath.row].price ?? 0.0)"
         
         if let content = cell.textLabel!.text{
-            if content.count > 32{
-                cell.textLabel!.text = String(content.prefix(32)) + "..."
+            if content.count > 30{
+                cell.textLabel!.text = String(content.prefix(30)) + "..."
             }
         }
         return cell
