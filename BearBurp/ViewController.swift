@@ -215,7 +215,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate,U
         
         let title = UILabel(frame: CGRect(x: 0, y: 120, width: view.frame.size.width/2 - 3, height: 30))
         title.text = theData?.message[indexPath.item].name
-        title.font = UIFont(name: "helvetica", size: CGFloat(14))
+        title.font = UIFont(name: "Helvetica", size: CGFloat(14))
         imageview.addSubview(title)
         
         let rate = UILabel(frame: CGRect(x: 280, y: 120, width: view.frame.size.width/2 - 3, height: 30))
@@ -239,7 +239,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate,U
             )
         }
         rate.attributedText = mString
-        rate.font = UIFont(name: "helvetica", size: CGFloat(12))
+        rate.font = UIFont(name: "Helvetica", size: CGFloat(12))
         imageview.addSubview(rate)
         cell.contentView.subviews.forEach {$0.removeFromSuperview()}
         UIView.transition(with: cell.contentView, duration: 0.25, options: [.transitionCrossDissolve], animations: {

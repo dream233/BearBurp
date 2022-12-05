@@ -72,7 +72,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="BearBurp" id="Kk7-J4-SIi">
                         <barButtonItem key="leftBarButtonItem" style="done" id="jXC-h3-lpa">
-                            <button key="customView" opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="GDI-qN-cIv">
+                            <button key="customView" opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="GDI-qN-cIv">
                                 <rect key="frame" x="16" y="4.6666666666666679" width="236" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="1" green="0.1333333333" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
