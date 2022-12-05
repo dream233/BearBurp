@@ -139,7 +139,7 @@ extension AnnotationView:UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
         cell.textLabel!.text = foods?.message[indexPath.row].name
-        cell.detailTextLabel!.text = "\(foods?.message[indexPath.row].price ?? 0.0) $"
+        cell.detailTextLabel!.text = "$ \(foods?.message[indexPath.row].price ?? 0.0)"
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 12)
         cell.textLabel?.textColor = .black
@@ -148,6 +148,12 @@ extension AnnotationView:UITableViewDataSource, UITableViewDelegate{
         let view = UIView()
         view.backgroundColor = .clear
         cell.selectedBackgroundView = view
+        
+        if let content = cell.textLabel!.text{
+            if content.count > 25{
+                cell.textLabel!.text = String(content.prefix(25)) + "..."
+            }
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

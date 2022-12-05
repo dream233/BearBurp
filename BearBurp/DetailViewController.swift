@@ -51,11 +51,11 @@ class DetailViewController: UIViewController{
                 defaults.set(encoded, forKey: "Favorite_\(restaurant.id)")
             }
             
-            favoriteBtn.setTitle(" Liked", for: .normal)
+//            favoriteBtn.setTitle(" Liked", for: .normal)
             favoriteBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }else{
             defaults.removeObject(forKey: "Favorite_\(restaurant.id)")
-            favoriteBtn.setTitle(" Like", for: .normal)
+//            favoriteBtn.setTitle(" Like", for: .normal)
             favoriteBtn.setImage(UIImage(systemName: "heart"), for: .normal)
         }
     }
@@ -124,10 +124,10 @@ class DetailViewController: UIViewController{
     func setLikedButton(){
         // set favorite btn
         if(UserDefaults.standard.object(forKey: "Favorite_\(restaurant.id)") != nil){
-            favoriteBtn.setTitle(" Liked", for: .normal)
+//            favoriteBtn.setTitle(" Liked", for: .normal)
             favoriteBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }else{
-            favoriteBtn.setTitle(" Like", for: .normal)
+//            favoriteBtn.setTitle(" Like", for: .normal)
             favoriteBtn.setImage(UIImage(systemName: "heart"), for: .normal)
         }
         favoriteBtn.setTitleColor(.black, for: .normal)
@@ -155,7 +155,13 @@ extension DetailViewController:UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
         cell.textLabel!.text = foods?.message[indexPath.row].name
-        cell.detailTextLabel!.text = "\(foods?.message[indexPath.row].price ?? 0.0) $"
+        cell.detailTextLabel!.text = "$ \(foods?.message[indexPath.row].price ?? 0.0)"
+        
+        if let content = cell.textLabel!.text{
+            if content.count > 32{
+                cell.textLabel!.text = String(content.prefix(32)) + "..."
+            }
+        }
         return cell
     }
 }
