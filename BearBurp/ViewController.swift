@@ -10,9 +10,6 @@ import SwiftUI
 
 class ViewController: UIViewController{
     
-//    var theRestaurant : [Restaurant] = []
-//    var theAPIData : APIData?
-    
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -43,7 +40,7 @@ class ViewController: UIViewController{
         }
     }
     
-    // Creative Portion 2: Users can sort the movies (by "Release date" or by "Rating")
+    // Users can sort the movies (by "Release date" or by "Rating")
     @IBAction func sortButton(_ sender: UIButton) {
         sender.showsMenuAsPrimaryAction = true
         sender.menu = UIMenu(children: [
@@ -68,6 +65,8 @@ class ViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+        
         self.title = "BearBurp"
         searchBar.delegate = self
         setupCollectionView()
@@ -119,7 +118,6 @@ class ViewController: UIViewController{
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "mycell")
     }
     
-    // Jiarong 11-06 update
     func getDataFromMysql(query: String){
         var url:URL?
         
@@ -144,7 +142,6 @@ class ViewController: UIViewController{
 
     }
     
-    // Jiarong 11-06 update
     func cacheImages(){
         theImageCache = []
         for item in theData?.message ?? [] {
@@ -197,10 +194,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate,U
         return theData?.message.count ?? 0
     }
     
-    // Jiarong 11-06 update
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycell", for: indexPath)
-//        cell.backgroundColor = .black
         
         let imageview:UIImageView=UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width-3, height: 120));
         imageview.image = theImageCache[indexPath.item]
@@ -302,4 +297,6 @@ extension String {
         return String(self.unicodeScalars.filter { okayChars.contains($0) || $0.properties.isEmoji })
     }
 }
+
+
 
