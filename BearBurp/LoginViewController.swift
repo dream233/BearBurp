@@ -52,8 +52,13 @@ class LoginViewController: UIViewController {
     @IBAction func click_login(_ sender: Any) {
         var url:URL?
         
-        username = usernameInput.text
-        password = pwInput.text
+//        var myQuery = query.removeSpecialCharacters().condensedWhitespace
+//        myQuery = myQuery.unicodeScalars
+//            .filter { !$0.properties.isEmojiPresentation }
+//            .reduce("") { $0 + String($1) }
+        
+        username = (usernameInput.text ?? "default").removeSpecialCharacters().condensedWhitespace
+        password = (pwInput.text ?? "default").removeSpecialCharacters().condensedWhitespace
         url = URL(string: "http://3.86.178.119/~Charles/CSE438-final/login.php?username=\(username!)&password=\(password!)")
         let data = try! Data(contentsOf: url!)
         theData = try! JSONDecoder().decode(Message.self,from:data)

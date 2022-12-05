@@ -118,47 +118,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate{
 
 }
 
-//extension MapViewController: CLLocationManagerDelegate {
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//      //1
-//      if locations.count > 0 {
-//        let location = locations.last!
-////        print("Accuracy: \(location.horizontalAccuracy)")
-//
-//        //2 精度小于100米就停止更新
-//        if location.horizontalAccuracy < 100 {
-//          //3
-//          manager.stopUpdatingLocation()
-//        // 经纬度跨度
-//          let span = MKCoordinateSpan(latitudeDelta: 0.014, longitudeDelta: 0.014)
-//          let region = MKCoordinateRegion(center: location.coordinate, span: span)
-//          mapView.region = region
-//          // More code later...
-//        }
-//      }
-//    }
-//
-//}
-
-//extension MapViewController: ARDataSource {
-//  func ar(_ arViewController: ARViewController, viewForAnnotation: ARAnnotation) -> ARAnnotationView {
-//      let annotationView = AnnotationView()
-//      annotationView.annotation = viewForAnnotation
-//      annotationView.delegate = self
-//      annotationView.backgroundColor = .white
-//      annotationView.layer.cornerRadius = 10
-//      annotationView.layer.borderWidth = 1
-//      annotationView.layer.borderColor = UIColor(named: "black")?.cgColor
-//      annotationView.frame = CGRect(x: 0, y: 0, width: 150, height: 50)
-//      return annotationView
-//  }
-//}
-//extension MapViewController: AnnotationViewDelegate {
-//    func didTouch(annotationView: AnnotationView) {
-//
-//    }
-//}
-
 extension MapViewController: ARDataSource {
   func ar(_ arViewController: ARViewController, viewForAnnotation: ARAnnotation) -> ARAnnotationView {
       let annotationView = AnnotationView()
@@ -169,7 +128,6 @@ extension MapViewController: ARDataSource {
       annotationView.layer.borderWidth = 1
       annotationView.layer.borderColor = UIColor(named: "black")?.cgColor
       annotationView.frame = CGRect(x: 0, y: 0, width: 200, height: 55)
-//      annotationView.restaurant = restaurant
       annotationView.loadUI()
       return annotationView
   }

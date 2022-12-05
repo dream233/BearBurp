@@ -52,20 +52,13 @@ class AddReviewViewController: UIViewController {
                         
                     }
                 }
-
-//                let myReview = Review(userName: userName!, userAvar: userAvar, movieId: movieId!, movieName: movieName, review: review!)
-//
-//                let addToDatabase = DatabaseCommand.insertRow(myReview)
-//
-//                if addToDatabase == true {
-//                    navigationController?.popViewController(animated: true)
-//                }
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         view.backgroundColor = UIColor.white
         
         restaurantName.text = restaurant?.name

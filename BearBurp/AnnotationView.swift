@@ -16,7 +16,6 @@ protocol AnnotationViewDelegate {
 class AnnotationView: ARAnnotationView {
 
     var delegate: AnnotationViewDelegate?
-//    var restaurant : Restaurant!
     var foods : foodAPIData?
     let tableView = UITableView()
     override func didMoveToSuperview() {

@@ -67,16 +67,7 @@ class DetailViewController: UIViewController{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        //UI
-//        directionBtn.backgroundColor = .clear
-//        directionBtn.layer.cornerRadius = 17
-//        directionBtn.layer.borderWidth = 1
-//
-//        reviewBtn.backgroundColor = .clear
-//        reviewBtn.layer.cornerRadius = 17
-//        reviewBtn.layer.borderWidth = 1
-        
-//        setLikedButton()
+
         addLoadingView()
         DispatchQueue.global(qos: .userInitiated).async {
             self.fetchFood()
@@ -124,10 +115,8 @@ class DetailViewController: UIViewController{
     func setLikedButton(){
         // set favorite btn
         if(UserDefaults.standard.object(forKey: "Favorite_\(restaurant.id)") != nil){
-//            favoriteBtn.setTitle(" Liked", for: .normal)
             favoriteBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }else{
-//            favoriteBtn.setTitle(" Like", for: .normal)
             favoriteBtn.setImage(UIImage(systemName: "heart"), for: .normal)
         }
         favoriteBtn.setTitleColor(.black, for: .normal)

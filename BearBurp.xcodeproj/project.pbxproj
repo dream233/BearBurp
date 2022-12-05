@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1B184AFD290F3771001395A7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B184AFC290F3771001395A7 /* libsqlite3.tbd */; };
-		1B184B052910915E001395A7 /* webViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B184B042910915E001395A7 /* webViewController.swift */; };
 		1B184B072910B082001395A7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1B184B062910B082001395A7 /* README.md */; };
 		1B72A4B6290CE2BB00E2F244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4B5290CE2BB00E2F244 /* AppDelegate.swift */; };
 		1B72A4B8290CE2BB00E2F244 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72A4B7290CE2BB00E2F244 /* SceneDelegate.swift */; };
@@ -55,7 +54,6 @@
 /* Begin PBXFileReference section */
 		14583FD15449B2609EA53A64 /* Pods-BearBurp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearBurp.release.xcconfig"; path = "Target Support Files/Pods-BearBurp/Pods-BearBurp.release.xcconfig"; sourceTree = "<group>"; };
 		1B184AFC290F3771001395A7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		1B184B042910915E001395A7 /* webViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webViewController.swift; sourceTree = "<group>"; };
 		1B184B062910B082001395A7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1B72A4B2290CE2BB00E2F244 /* BearBurp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BearBurp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B72A4B5290CE2BB00E2F244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 				1B72A4C3290CE2BD00E2F244 /* Info.plist */,
 				1B72A4E9290EE8AD00E2F244 /* dataStructure.swift */,
 				94C70BCF293971080003D994 /* TabBarController.swift */,
-				1B184B042910915E001395A7 /* webViewController.swift */,
 				94767E1C291301DA00023638 /* LoadingView.swift */,
 				947C282C29146E750062521F /* MapViewController.swift */,
 				94D7AE962914A386008E1088 /* AnnotationView.swift */,
@@ -493,7 +490,6 @@
 				94C70BD0293971080003D994 /* TabBarController.swift in Sources */,
 				947C282D29146E750062521F /* MapViewController.swift in Sources */,
 				1B72A4B8290CE2BB00E2F244 /* SceneDelegate.swift in Sources */,
-				1B184B052910915E001395A7 /* webViewController.swift in Sources */,
 				94D7AE992914A4B6008E1088 /* Place.swift in Sources */,
 				1B72A4EA290EE8AD00E2F244 /* dataStructure.swift in Sources */,
 				94767E1B2912F51F00023638 /* AddReviewViewController.swift in Sources */,
@@ -682,7 +678,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RTF5TJVD55;
+				DEVELOPMENT_TEAM = 24226NFVWT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BearBurp/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera Needed For AR View";
@@ -701,7 +697,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ll.BearBurp;
+				PRODUCT_BUNDLE_IDENTIFIER = lll.BearBurp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
