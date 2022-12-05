@@ -13,6 +13,8 @@ class ViewController: UIViewController{
 //    var theRestaurant : [Restaurant] = []
 //    var theAPIData : APIData?
     
+    @IBOutlet weak var sortBtn: UIButton!
+    
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -47,14 +49,16 @@ class ViewController: UIViewController{
     @IBAction func sortButton(_ sender: UIButton) {
         sender.showsMenuAsPrimaryAction = true
         sender.menu = UIMenu(children: [
-                UIAction(title: "Rating", handler: { action in
+                UIAction(title: "Popularity/Rating", handler: { action in
                     if(self.isSort == true){
                         self.theData = self.sortData
+                        self.sortBtn.setTitle(" sorting by popularity", for: .normal)
                         self.isSort = false
                     }else{
                         if(!(self.theData?.message.isEmpty)!){
                             self.theData?.message.sort(by: {$0.rating > $1.rating})
                         }
+                        self.sortBtn.setTitle(" sorting by rating", for: .normal)
                         self.isSort = true
                     }
                     
